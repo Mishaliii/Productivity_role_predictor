@@ -1,0 +1,11 @@
+Session_ID
+Typing_Intensity
+Idle_Duration
+Task_Switching_Frequency
+Time_Coding
+Time_Email
+Time_Meetings
+Time_SocialMedia
+Time_Browsing
+Time_Docs
+Productivity_Label
