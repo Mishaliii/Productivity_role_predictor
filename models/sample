@@ -1,0 +1,3 @@
+import joblib
+feature_list = joblib.load("models/feature_list.pkl")
+print(feature_list)
