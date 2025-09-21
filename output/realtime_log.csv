@@ -1,491 +1,152 @@
-typing_intensity,idle_duration,task_switching_frequency,time_coding,time_email,time_meetings,time_socialmedia,time_browsing,time_docs,mouse_intensity,PredictedProductivity,ClusterID,RoleName,ProductivityStatus,Timestamp,session_id,device_id,active_window_title
-0.0,0.0234,0,0,0,0,0,1,0,0.0,50.02210000000005,3,Designer,❌ Not Productive,2025-09-12 11:50:29,1757658029,Nitro,streamlit - google chrome
-0.0,0.0324,1,0,0,0,0,1,0,0.0,49.894550000000024,3,Designer,❌ Not Productive,2025-09-12 11:50:30,1757658029,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0191,0,0,0,0,0,1,0,0.0,50.02210000000005,3,Designer,❌ Not Productive,2025-09-12 11:50:37,1757658037,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.019,0,0,0,0,0,1,0,1.8485,50.128250000000044,3,Designer,❌ Not Productive,2025-09-12 11:50:37,1757658037,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0001,0,0,0,0,0,1,0,11.7805,50.94845000000004,3,Designer,❌ Not Productive,2025-09-12 11:50:40,1757658039,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0001,1,0,0,0,0,1,0,0.9957,50.83780000000004,3,Designer,❌ Not Productive,2025-09-12 11:50:40,1757658040,Nitro,streamlit - google chrome
-7.4825,0.0,1,0,0,0,0,1,0,1.6272,77.67110000000002,3,Designer,✅ Productive,2025-09-12 11:50:44,1757658044,Nitro,⚡ productivity & role clustering - google chrome
-4.0,0.0005,1,0,0,0,0,1,0,0.0,77.73490000000001,3,Designer,✅ Productive,2025-09-12 11:50:45,1757658045,Nitro,streamlit - google chrome
-9.5036,0.0022,1,0,0,0,0,1,0,0.0,77.73490000000001,3,Designer,✅ Productive,2025-09-12 11:50:50,1757658049,Nitro,⚡ productivity & role clustering - google chrome
-5.0,0.0023,1,0,0,0,0,1,0,0.0,77.73490000000001,3,Designer,✅ Productive,2025-09-12 11:50:50,1757658050,Nitro,streamlit - google chrome
-4.5074,0.0109,1,0,0,0,0,1,0,0.0,77.46880000000002,3,Designer,✅ Productive,2025-09-12 11:50:55,1757658054,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0142,1,0,0,0,0,1,0,0.0,49.89455000000004,3,Designer,❌ Not Productive,2025-09-12 11:50:55,1757658055,Nitro,streamlit - google chrome
-0.0,0.0008,1,0,0,0,0,1,0,0.1001,50.72555000000004,3,Designer,❌ Not Productive,2025-09-12 11:51:00,1757658059,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0004,1,0,0,0,0,0,0,3.9999,50.81465000000002,3,Designer,❌ Not Productive,2025-09-12 11:51:05,1757658064,Nitro,warning: this site can see edits you make
-1.9909,0.0155,1,0,0,0,0,0,0,0.6053,78.06540000000004,3,Designer,✅ Productive,2025-09-12 11:51:10,1757658070,Nitro,task switching
-0.1723,0.0128,1,1,0,0,0,0,0,3.0652,54.963750000000026,3,Designer,❌ Not Productive,2025-09-12 11:51:15,1757658075,Nitro,realtime_log.csv - productivity_role_predictor - visual studio code
-0.0,0.0267,0,1,0,0,0,0,0,1.3454,51.44425000000005,3,Designer,❌ Not Productive,2025-09-12 11:51:20,1757658080,Nitro,realtime_log.csv - productivity_role_predictor - visual studio code
-0.0,0.0024,0,1,0,0,0,0,0,0.8544,52.27375000000006,3,Designer,❌ Not Productive,2025-09-12 11:51:25,1757658085,Nitro,realtime_log.csv - productivity_role_predictor - visual studio code
-0.0,0.0325,0,0,0,0,0,1,0,0.0,50.022100000000066,3,Designer,❌ Not Productive,2025-09-12 11:54:02,1757658241,Nitro,streamlit - google chrome
-0.0,0.1256,1,0,0,0,0,1,0,0.0,49.197850000000024,3,Designer,❌ Not Productive,2025-09-12 11:54:07,1757658247,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.209,0,0,0,0,0,1,0,0.0,49.27440000000005,3,Designer,❌ Not Productive,2025-09-12 11:54:12,1757658252,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.2923,0,0,0,0,0,1,0,0.0,49.01900000000004,3,Designer,❌ Not Productive,2025-09-12 11:54:17,1757658257,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.3758,0,0,0,0,0,1,0,0.0,48.88295000000003,3,Designer,❌ Not Productive,2025-09-12 11:54:22,1757658262,Nitro,⚡ productivity & role clustering - google chrome
-2.2564,0.013,1,1,0,0,0,0,0,0.0,78.83794999999998,3,Designer,✅ Productive,2025-09-12 11:54:27,1757658267,Nitro,collect_realtime_data.py - productivity_role_predictor - visual studio code
-0.8649,0.0051,1,0,0,0,0,1,0,0.5032,62.4509999999999,3,Designer,❌ Not Productive,2025-09-12 11:54:32,1757658272,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0295,0,0,0,0,0,1,0,1.3605,50.10690000000005,3,Designer,❌ Not Productive,2025-09-12 11:54:37,1757658277,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.1129,0,0,0,0,0,1,0,0.0,49.50460000000005,3,Designer,❌ Not Productive,2025-09-12 11:54:42,1757658282,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0264,0,0,0,0,0,1,0,0.05,50.09095000000006,3,Designer,❌ Not Productive,2025-09-12 11:54:47,1757658287,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0016,1,0,0,0,0,0,0,4.1643,50.81465000000003,3,Designer,❌ Not Productive,2025-09-12 11:54:52,1757658292,Nitro,warning: this site can see edits you make
-0.0,0.0014,1,0,0,0,0,0,0,5.8648,50.81465000000003,3,Designer,❌ Not Productive,2025-09-12 11:54:57,1757658297,Nitro,open
-2.5953,0.0015,1,0,0,0,0,1,0,2.0973,77.61065000000002,3,Designer,✅ Productive,2025-09-12 11:55:02,1757658302,Nitro,project2 - google chrome
-4.2218,0.0037,0,0,0,0,0,1,0,0.0,77.97415000000001,3,Designer,✅ Productive,2025-09-12 11:55:07,1757658307,Nitro,project2 - google chrome
-0.9949,0.0386,1,0,0,0,0,0,0,0.0,67.93474999999998,3,Designer,❌ Not Productive,2025-09-12 11:55:12,1757658312,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0,0.1219,0,0,0,0,0,0,0,0.0,49.38315000000005,3,Designer,❌ Not Productive,2025-09-12 11:55:17,1757658317,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0,0.2052,0,0,0,0,0,0,0,0.0,49.37540000000004,3,Designer,❌ Not Productive,2025-09-12 11:55:22,1757658322,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0,0.289,0,0,0,0,0,0,0,0.0,49.19290000000003,3,Designer,❌ Not Productive,2025-09-12 11:55:27,1757658327,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0,0.3718,0,0,0,0,0,0,0,0.0,49.05685000000003,3,Designer,❌ Not Productive,2025-09-12 11:55:32,1757658332,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0,0.4554,0,0,0,0,0,0,0,0.0,47.701150000000005,3,Designer,❌ Not Productive,2025-09-12 11:55:37,1757658337,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0,0.5383,0,0,0,0,0,0,0,0.0,47.299350000000004,3,Designer,❌ Not Productive,2025-09-12 11:55:42,1757658342,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0,0.6218,0,0,0,0,0,0,0,0.0,46.60840000000001,3,Designer,❌ Not Productive,2025-09-12 11:55:47,1757658347,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0,0.7056,0,0,0,0,0,0,0,0.0,45.39615000000001,3,Designer,❌ Not Productive,2025-09-12 11:55:52,1757658352,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0,1.7065,0,0,0,0,0,0,0,0.0,42.33980000000004,3,Designer,❌ Not Productive,2025-09-12 11:56:52,1757658412,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0,2.7066,0,0,0,0,0,0,0,0.0,42.339800000000054,3,Designer,❌ Not Productive,2025-09-12 11:57:52,1757658472,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0167,0.735,0,0,0,0,0,0,0,0.0,45.24890000000001,3,Designer,❌ Not Productive,2025-09-12 11:58:52,1757658532,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0,1.735,0,0,0,0,0,0,0,0.0,42.33980000000004,3,Designer,❌ Not Productive,2025-09-12 11:59:52,1757658592,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0,2.7349,0,0,0,0,0,0,0,0.0,42.33980000000004,3,Designer,❌ Not Productive,2025-09-12 12:00:52,1757658652,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0167,0.2185,0,0,0,0,0,0,0,0.0,49.687850000000054,3,Designer,❌ Not Productive,2025-09-12 12:01:53,1757658712,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0333,0.2579,1,0,0,0,0,1,0,0.1003,50.331950000000035,3,Designer,❌ Not Productive,2025-09-12 12:02:52,1757658772,Nitro,project2 - google chrome
-1.0663,0.0112,1,0,0,0,0,0,0,0.2529,68.28355,3,Designer,❌ Not Productive,2025-09-12 12:03:52,1757658832,Nitro,pdf x - 2025-09-11_15-22-57_compressed[1].pdf
-0.0,0.0535,0,0,0,0,0,1,0,3.584,50.128250000000044,3,Designer,❌ Not Productive,2025-09-17 19:27:49,1758117468,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0,0,0,0,0,0,1,0,12.8648,50.94845000000005,3,Designer,❌ Not Productive,2025-09-17 19:27:55,1758117475,Nitro,⚡ productivity & role clustering - google chrome
-2.8011,0.0005,0,0,0,0,0,1,0,13.8589,77.84085000000003,3,Designer,✅ Productive,2025-09-17 19:28:00,1758117480,Nitro,⚡ productivity & role clustering - google chrome
-0.7927,0.0,0,0,0,0,0,1,0,3.1316,62.73824999999991,3,Designer,❌ Not Productive,2025-09-17 19:28:05,1758117485,Nitro,⚡ productivity & role clustering - google chrome
-2.9909,0.0002,0,0,0,0,0,1,0,2.616,77.84065000000002,3,Designer,✅ Productive,2025-09-17 19:28:10,1758117490,Nitro,⚡ productivity & role clustering - google chrome
-2.6136,0.0,0,0,0,0,0,1,0,3.4132,77.84085000000002,3,Designer,✅ Productive,2025-09-17 19:28:15,1758117495,Nitro,⚡ productivity & role clustering - google chrome
-0.8029,0.0005,0,0,0,0,0,1,0,1.992,62.66414999999991,3,Designer,❌ Not Productive,2025-09-17 19:28:20,1758117500,Nitro,⚡ productivity & role clustering - google chrome
-1.9989,0.0059,0,0,0,0,0,1,0,0.464,77.91975000000004,3,Designer,✅ Productive,2025-09-17 19:28:25,1758117505,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0007,0,0,0,0,0,1,0,2.077,50.94845000000005,3,Designer,❌ Not Productive,2025-09-17 19:28:30,1758117510,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0748,0,0,0,0,0,1,0,1.3095,49.657000000000046,3,Designer,❌ Not Productive,2025-09-17 19:28:35,1758117515,Nitro,⚡ productivity & role clustering - google chrome
-0.8023,0.0016,0,0,0,0,0,1,0,1.1874,62.64374999999989,3,Designer,❌ Not Productive,2025-09-17 19:28:40,1758117520,Nitro,⚡ productivity & role clustering - google chrome
-1.3786,0.008,1,0,0,0,0,1,0,7.0922,75.67845000000004,3,Designer,✅ Productive,2025-09-17 19:28:45,1758117525,Nitro,project2 - google chrome
-0.0,0.0915,0,0,0,0,0,1,0,0.0,49.50460000000005,3,Designer,❌ Not Productive,2025-09-17 19:28:50,1758117530,Nitro,project2 - google chrome
-0.0,0.0641,0,0,0,0,0,1,0,1.2307,49.657000000000046,3,Designer,❌ Not Productive,2025-09-17 19:28:55,1758117535,Nitro,project2 - google chrome
-0.0,0.1475,0,0,0,0,0,1,0,0.0,49.293000000000056,3,Designer,❌ Not Productive,2025-09-17 19:29:00,1758117540,Nitro,project2 - google chrome
-0.0,0.006,1,1,0,0,0,0,0,2.0693,51.27250000000006,3,Designer,❌ Not Productive,2025-09-17 19:29:05,1758117545,Nitro,collect_realtime_data.py - productivity_role_predictor - visual studio code
-0.0,0.0227,0,1,0,0,0,0,0,2.8893,51.44425000000007,3,Designer,❌ Not Productive,2025-09-17 19:29:10,1758117550,Nitro,collect_realtime_data.py - productivity_role_predictor - visual studio code
-15.105,0.0109,1,0,0,0,0,0,0,0.0,77.74740000000003,3,Designer,✅ Productive,2025-09-17 19:29:15,1758117555,Nitro,task switching
-0.4043,0.0471,1,0,0,0,0,1,0,4.6458,56.06050000000001,3,Designer,❌ Not Productive,2025-09-17 19:29:20,1758117560,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0066,0,0,0,0,0,1,0,2.2069,50.128250000000044,3,Designer,❌ Not Productive,2025-09-17 19:29:25,1758117565,Nitro,⚡ productivity & role clustering - google chrome
-0.2014,0.0036,1,0,0,0,0,0,0,7.6401,55.14480000000003,3,Designer,❌ Not Productive,2025-09-17 19:29:30,1758117570,Nitro,snipping tool overlay
-0.0,0.001,1,0,0,0,0,0,0,4.6338,50.81465000000002,3,Designer,❌ Not Productive,2025-09-17 19:29:35,1758117575,Nitro,warning: this site can see edits you make
-0.0,0.0045,1,0,0,0,0,1,0,4.8133,50.00570000000002,3,Designer,❌ Not Productive,2025-09-17 19:29:40,1758117580,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0001,0,0,0,0,0,1,0,1.8372,50.94845000000005,3,Designer,❌ Not Productive,2025-09-17 19:29:48,1758117588,Nitro,⚡ productivity & role clustering - google chrome
-0.8396,0.0,1,0,0,0,0,1,0,7.8305,62.67379999999992,3,Designer,❌ Not Productive,2025-09-17 19:29:54,1758117594,Nitro,project2 - google chrome
-1.4095,0.0009,0,0,0,0,0,1,0,1.7061,76.70970000000003,3,Designer,✅ Productive,2025-09-17 19:29:59,1758117599,Nitro,project2 - google chrome
-1.9996,0.0008,0,0,0,0,0,1,0,4.1606,77.84085000000003,3,Designer,✅ Productive,2025-09-17 19:30:04,1758117604,Nitro,project2 - google chrome
-3.4182,0.0072,0,0,0,0,0,1,0,0.0,77.68565000000001,3,Designer,✅ Productive,2025-09-17 19:30:09,1758117609,Nitro,project2 - google chrome
-4.3506,0.0012,0,0,0,0,0,1,0,0.0,77.97415000000001,3,Designer,✅ Productive,2025-09-17 19:30:14,1758117614,Nitro,project2 - google chrome
-2.4285,0.0145,0,0,0,0,0,1,0,0.0,77.68565000000001,3,Designer,✅ Productive,2025-09-17 19:30:19,1758117619,Nitro,project2 - google chrome
-2.7808,0.0089,0,0,0,0,0,1,0,0.0,77.68565000000001,3,Designer,✅ Productive,2025-09-17 19:30:24,1758117624,Nitro,project2 - google chrome
-1.2235,0.0,1,0,0,0,0,1,0,8.2758,73.55350000000003,3,Designer,✅ Productive,2025-09-17 19:30:29,1758117629,Nitro,⚡ productivity & role clustering - google chrome
-1.7989,0.0041,0,0,0,0,0,1,0,0.6751,78.03405000000004,3,Designer,✅ Productive,2025-09-17 19:30:34,1758117634,Nitro,⚡ productivity & role clustering - google chrome
-3.0124,0.0016,1,0,0,0,0,0,0,0.0,78.01740000000002,3,Designer,✅ Productive,2025-09-17 19:30:39,1758117639,Nitro,task switching
-1.9959,0.0227,1,0,0,0,0,1,0,0.0,77.46880000000002,3,Designer,✅ Productive,2025-09-17 19:30:44,1758117644,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0452,0,0,0,0,0,1,0,0.7985,50.12515000000004,3,Designer,❌ Not Productive,2025-09-17 19:30:49,1758117649,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0035,1,0,0,0,0,1,0,4.3427,50.797700000000034,3,Designer,❌ Not Productive,2025-09-17 19:30:54,1758117654,Nitro,time and work - aptitude questions and answers - google chrome
-0.0,0.0001,1,0,0,0,0,1,0,2.6622,50.797700000000034,3,Designer,❌ Not Productive,2025-09-17 19:30:59,1758117659,Nitro,project2 - google chrome
-2.6,0.0172,0,0,0,0,0,1,0,1.6443,77.73445000000002,3,Designer,✅ Productive,2025-09-17 19:31:04,1758117664,Nitro,project2 - google chrome
-3.789,0.0001,0,0,0,0,0,1,0,0.0,77.97415000000001,3,Designer,✅ Productive,2025-09-17 19:31:09,1758117669,Nitro,project2 - google chrome
-4.2163,0.0028,0,0,0,0,0,1,0,0.0,77.97415,3,Designer,✅ Productive,2025-09-17 19:31:14,1758117674,Nitro,project2 - google chrome
-3.788,0.0008,0,0,0,0,0,1,0,0.0,77.97415,3,Designer,✅ Productive,2025-09-17 19:31:19,1758117679,Nitro,project2 - google chrome
-3.2153,0.0217,0,0,0,0,0,1,0,0.0,77.68565000000001,3,Designer,✅ Productive,2025-09-17 19:31:24,1758117684,Nitro,project2 - google chrome
-2.7831,0.0006,0,0,0,0,0,1,0,0.0,77.97415,3,Designer,✅ Productive,2025-09-17 19:31:29,1758117689,Nitro,project2 - google chrome
-4.41,0.0019,0,0,0,0,0,1,0,0.0,77.97415,3,Designer,✅ Productive,2025-09-17 19:31:34,1758117694,Nitro,project2 - google chrome
-1.8364,0.003,1,0,0,0,0,1,0,4.9002,77.61635000000003,3,Designer,✅ Productive,2025-09-17 19:31:39,1758117699,Nitro,⚡ productivity & role clustering - google chrome
-0.0,0.0112,1,0,0,0,0,1,0,6.7844,50.00570000000003,3,Designer,❌ Not Productive,2025-09-17 19:31:44,1758117704,Nitro,project2 - google chrome
-4.5678,0.0032,0,0,0,0,0,1,0,0.0,77.97415000000001,3,Designer,✅ Productive,2025-09-17 19:31:49,1758117709,Nitro,project2 - google chrome
-3.4057,0.0014,0,0,0,0,0,1,0,0.0,77.97415,3,Designer,✅ Productive,2025-09-17 19:31:54,1758117714,Nitro,project2 - google chrome
-3.592,0.0007,0,0,0,0,0,1,0,0.0,77.97415,3,Designer,✅ Productive,2025-09-17 19:31:59,1758117719,Nitro,project2 - google chrome
-1.8184,0.0104,0,0,0,0,0,1,0,0.0,77.68565,3,Designer,✅ Productive,2025-09-17 19:32:04,1758117724,Nitro,project2 - google chrome
-2.188,0.0257,0,0,0,0,0,1,0,0.0,77.68565000000001,3,Designer,✅ Productive,2025-09-17 19:32:09,1758117729,Nitro,project2 - google chrome
-1.0012,0.0118,0,0,0,0,0,1,0,0.0,68.38845000000002,3,Designer,❌ Not Productive,2025-09-17 19:32:14,1758117734,Nitro,project2 - google chrome
-3.4042,0.0028,0,0,0,0,0,1,0,0.0,77.97415000000001,3,Designer,✅ Productive,2025-09-17 19:32:19,1758117739,Nitro,project2 - google chrome
-3.1858,0.0035,0,0,0,0,0,1,0,0.0,77.97415,3,Designer,✅ Productive,2025-09-17 19:32:24,1758117744,Nitro,project2 - google chrome
-0.2006,0.0761,0,0,0,0,0,1,0,0.0,53.75585000000001,3,Designer,❌ Not Productive,2025-09-17 19:32:29,1758117749,Nitro,project2 - google chrome
-0.0,0.1598,0,0,0,0,0,1,0,0.0,49.293000000000056,3,Designer,❌ Not Productive,2025-09-17 19:32:34,1758117754,Nitro,project2 - google chrome
-0.0,0.2424,0,0,0,0,0,1,0,0.0,49.026750000000035,3,Designer,❌ Not Productive,2025-09-17 19:32:39,1758117759,Nitro,project2 - google chrome
-0.2543,0.5775,0,0,0,0,0,1,0,0.3977,49.16165000000001,3,Designer,❌ Not Productive,2025-09-17 19:33:34,1758117814,Nitro,project2 - google chrome
-1.3816,0.0,1,1,0,0,0,0,0,0.6513,78.07965000000004,3,Designer,✅ Productive,2025-09-17 19:34:34,1758117874,Nitro,collect_realtime_data.py - productivity_role_predictor - visual studio code
-0.3001,0.5329,1,0,0,0,0,1,0,0.865,52.49895000000001,3,Designer,❌ Not Productive,2025-09-17 19:35:34,1758117934,Nitro,project2 - google chrome
-0.1167,0.0061,0,0,0,0,0,1,0,2.0622,53.24705000000004,3,Designer,❌ Not Productive,2025-09-17 19:36:34,1758117994,Nitro,project2 - google chrome
-1.3165,0.0073,1,1,0,0,0,0,0,0.7632,76.04685000000003,3,Designer,✅ Productive,2025-09-17 19:37:34,1758118054,Nitro,collect_realtime_data.py - productivity_role_predictor - visual studio code
-1758120169,Nitro,0.0,0.0,1.15,0,0.0,0.0,0.0,0.0,0.0,1.15,0,0,streamlit - google chrome,42.65,3,Designer,Creative,❌ Not Productive,2025-09-17 20:12:50
-1758120175,Nitro,0.0,0.0,6.84,1,0.0,0.0,0.0,0.0,0.0,6.84,0,0,⚡ productivity & role clustering - google chrome,41.92,3,Designer,Creative,❌ Not Productive,2025-09-17 20:12:55
-1758120180,Nitro,0.0,0.05,0.02,0,0.0,0.0,0.0,0.0,0.0,11.84,0,0,⚡ productivity & role clustering - google chrome,50.2,3,Designer,Creative,❌ Not Productive,2025-09-17 20:13:00
-1758120185,Nitro,0.0,14.0,1.03,0,0.0,0.0,0.0,0.0,0.0,16.84,0,0,⚡ productivity & role clustering - google chrome,43.2,3,Designer,Creative,❌ Not Productive,2025-09-17 20:13:05
-1758120190,Nitro,0.98,0.0,0.59,1,0.0,0.0,0.0,0.0,0.0,16.84,0,0,youtube - (1456) youtube,64.79,3,Designer,Creative,❌ Not Productive,2025-09-17 20:13:10
-1758120195,Nitro,0.81,0.0,2.85,1,0.0,0.0,0.0,0.0,0.0,16.84,0,0,task switching,57.59,3,Designer,Creative,❌ Not Productive,2025-09-17 20:13:15
-1758120200,Nitro,0.2,1.2,0.71,1,0.0,0.0,0.0,0.0,0.0,21.74,0,0,⚡ productivity & role clustering - google chrome,48.05,3,Designer,Creative,❌ Not Productive,2025-09-17 20:13:20
-1758120205,Nitro,0.0,0.3,0.0,0,0.0,0.0,0.0,0.0,0.0,26.83,0,0,⚡ productivity & role clustering - google chrome,51.03,1,Analyst,Business,❌ Not Productive,2025-09-17 20:13:25
-1758120210,Nitro,0.0,6.72,0.43,0,0.0,0.0,0.0,0.0,0.0,31.85,0,0,⚡ productivity & role clustering - google chrome,49.08,1,Analyst,Business,❌ Not Productive,2025-09-17 20:13:30
-1758120215,Nitro,0.0,0.53,4.17,0,0.0,0.0,0.0,0.0,0.0,36.8,0,0,⚡ productivity & role clustering - google chrome,42.11,1,Analyst,Business,❌ Not Productive,2025-09-17 20:13:35
-1758120220,Nitro,0.0,0.0,9.22,0,0.0,0.0,0.0,0.0,0.0,41.85,0,0,⚡ productivity & role clustering - google chrome,41.99,1,Analyst,Business,❌ Not Productive,2025-09-17 20:13:40
-1758120225,Nitro,0.0,0.0,14.24,0,0.0,0.0,0.0,0.0,0.0,46.87,0,0,⚡ productivity & role clustering - google chrome,41.99,1,Analyst,Business,❌ Not Productive,2025-09-17 20:13:45
-1758120230,Nitro,0.0,2.03,0.06,0,0.0,0.0,0.0,0.0,0.0,51.8,0,0,⚡ productivity & role clustering - google chrome,49.8,1,Analyst,Business,❌ Not Productive,2025-09-17 20:13:50
-1758120235,Nitro,0.0,5.17,0.48,1,0.0,0.0,0.0,0.0,0.0,51.8,0,0,confirm save as,47.67,1,Analyst,Business,❌ Not Productive,2025-09-17 20:13:55
-1758120240,Nitro,0.0,3.1,0.13,1,0.0,0.0,0.0,0.0,0.0,51.8,0,0,warning: this site can see edits you make,49.49,1,Analyst,Business,❌ Not Productive,2025-09-17 20:14:00
-1758120245,Nitro,2.0,0.4,0.43,1,0.0,0.0,0.0,0.0,0.0,56.8,0,0,streamlit - google chrome,75.65,1,Analyst,Business,✅ Productive,2025-09-17 20:14:05
-1758120250,Nitro,0.79,4.92,0.06,1,0.0,0.0,0.0,0.0,0.0,61.89,0,0,project2 - google chrome,61.5,1,Analyst,Business,❌ Not Productive,2025-09-17 20:14:10
-1758120255,Nitro,9.58,2.29,0.0,1,0.0,0.0,0.0,0.0,0.0,61.89,0,0,open,76.21,1,Analyst,Business,✅ Productive,2025-09-17 20:14:15
-1758120260,Nitro,0.0,2.02,1.85,1,0.0,0.0,0.0,0.0,0.0,66.89,0,0,project2 - google chrome,42.27,1,Analyst,Business,❌ Not Productive,2025-09-17 20:14:20
-1758120265,Nitro,4.18,0.0,0.05,0,0.0,0.0,0.0,0.0,0.0,71.91,0,0,project2 - google chrome,76.22,1,Analyst,Business,✅ Productive,2025-09-17 20:14:25
-1758120270,Nitro,0.81,0.0,4.0,0,0.0,0.0,0.0,0.0,0.0,76.87,0,0,project2 - google chrome,57.67,1,Analyst,Business,❌ Not Productive,2025-09-17 20:14:30
-1758120275,Nitro,0.0,0.0,9.0,0,0.0,0.0,0.0,0.0,0.0,81.86,0,0,project2 - google chrome,41.99,1,Analyst,Business,❌ Not Productive,2025-09-17 20:14:35
-1758120280,Nitro,0.0,0.0,14.02,0,0.0,0.0,0.0,0.0,0.0,86.88,0,0,project2 - google chrome,41.99,1,Analyst,Business,❌ Not Productive,2025-09-17 20:14:40
-1758120285,Nitro,0.0,0.0,19.0,0,0.0,0.0,0.0,0.0,0.0,91.87,0,0,project2 - google chrome,41.99,1,Analyst,Business,❌ Not Productive,2025-09-17 20:14:45
-1758120290,Nitro,2.2,0.0,0.15,0,0.0,0.0,0.0,0.0,0.0,96.87,0,0,project2 - google chrome,76.24,1,Analyst,Business,✅ Productive,2025-09-17 20:14:50
-1758120295,Nitro,5.98,0.0,0.03,0,0.0,0.0,0.0,0.0,0.0,101.89,0,0,project2 - google chrome,76.22,1,Analyst,Business,✅ Productive,2025-09-17 20:14:55
-1758120300,Nitro,4.02,0.0,0.29,0,0.0,0.0,0.0,0.0,0.0,106.87,0,0,project2 - google chrome,76.26,1,Analyst,Business,✅ Productive,2025-09-17 20:15:00
-1758120305,Nitro,2.6,0.0,1.46,0,0.0,0.0,0.0,0.0,0.0,111.88,0,0,project2 - google chrome,70.25,1,Analyst,Business,✅ Productive,2025-09-17 20:15:05
-1758120315,Nitro,2.33,1.37,0.13,1,0.0,0.0,0.0,0.0,0.0,121.75,0,0,⚡ productivity & role clustering - google chrome,75.94,1,Analyst,Business,✅ Productive,2025-09-17 20:15:15
-1758120320,Nitro,0.79,5.31,0.1,1,0.0,0.0,0.0,0.0,0.0,126.81,0,0,project2 - google chrome,61.5,1,Analyst,Business,❌ Not Productive,2025-09-17 20:15:20
-1758120325,Nitro,5.17,0.0,0.12,0,0.0,0.0,0.0,0.0,0.0,131.83,0,0,project2 - google chrome,76.24,1,Analyst,Business,✅ Productive,2025-09-17 20:15:25
-1758120330,Nitro,3.2,0.2,0.05,0,0.0,0.0,0.0,0.0,0.0,136.83,0,0,project2 - google chrome,76.26,1,Analyst,Business,✅ Productive,2025-09-17 20:15:30
-1758120335,Nitro,2.4,0.07,0.38,0,0.0,0.0,0.0,0.0,0.0,141.84,0,0,project2 - google chrome,76.09,1,Analyst,Business,✅ Productive,2025-09-17 20:15:35
-1758120340,Nitro,5.21,0.0,0.04,0,0.0,0.0,0.0,0.0,0.0,146.83,0,0,project2 - google chrome,76.22,1,Analyst,Business,✅ Productive,2025-09-17 20:15:40
-1758120345,Nitro,5.18,0.0,0.14,0,0.0,0.0,0.0,0.0,0.0,151.85,0,0,project2 - google chrome,76.24,1,Analyst,Business,✅ Productive,2025-09-17 20:15:45
-1758120350,Nitro,1.41,0.0,3.77,0,0.0,0.0,0.0,0.0,0.0,156.82,0,0,project2 - google chrome,69.6,1,Analyst,Business,❌ Not Productive,2025-09-17 20:15:50
-1758120355,Nitro,0.0,0.0,8.76,0,0.0,0.0,0.0,0.0,0.0,161.81,0,0,project2 - google chrome,41.99,1,Analyst,Business,❌ Not Productive,2025-09-17 20:15:55
-1758120360,Nitro,0.0,0.0,13.75,0,0.0,0.0,0.0,0.0,0.0,166.8,0,0,project2 - google chrome,41.99,1,Analyst,Business,❌ Not Productive,2025-09-17 20:16:00
-1758120365,Nitro,0.0,0.93,0.74,0,0.0,0.0,0.0,0.0,0.0,171.83,0,0,project2 - google chrome,45.21,1,Analyst,Business,❌ Not Productive,2025-09-17 20:16:05
-1758120370,Nitro,0.0,0.79,0.55,0,0.0,0.0,0.0,0.0,0.0,176.82,0,0,project2 - google chrome,47.28,1,Analyst,Business,❌ Not Productive,2025-09-17 20:16:10
-1758120375,Nitro,0.0,0.0,5.56,0,0.0,0.0,0.0,0.0,0.0,181.83,0,0,project2 - google chrome,41.99,1,Analyst,Business,❌ Not Productive,2025-09-17 20:16:15
-1758120394,Nitro,0.0,0.09,18.13,0,0.0,0.0,0.0,0.0,0.0,200.88,0,0,project2 - google chrome,42.14,1,Analyst,Business,❌ Not Productive,2025-09-17 20:16:34
-1758120395,Nitro,0.0,0.0,19.11,0,0.0,0.0,0.0,0.0,0.0,201.88,0,0,project2 - google chrome,41.99,1,Analyst,Business,❌ Not Productive,2025-09-17 20:16:35
-1758120454,Nitro,0.19,0.84,46.69,0,0.0,0.0,0.0,0.0,0.0,260.92,0,0,project2 - google chrome,44.34,1,Analyst,Business,❌ Not Productive,2025-09-17 20:17:34
-1758120455,Nitro,0.0,0.0,47.69,0,0.0,0.0,0.0,0.0,0.0,261.92,0,0,project2 - google chrome,41.99,1,Analyst,Business,❌ Not Productive,2025-09-17 20:17:35
-1758120635,Nitro,0.0,0.0,1.31,0,0.0,0.0,0.0,0.0,0.0,1.31,streamlit - google chrome,42.27,3,Designer,Creative,❌ Not Productive,2025-09-17 20:20:35
-1758120636,Nitro,0.0,0.0,2.85,1,0.0,0.0,0.0,0.0,0.0,2.85,⚡ productivity & role clustering - google chrome,41.92,3,Designer,Creative,❌ Not Productive,2025-09-17 20:20:36
-1758120643,Nitro,0.0,1.34,4.37,0,0.0,0.0,0.0,0.0,0.0,9.62,⚡ productivity & role clustering - google chrome,42.35,3,Designer,Creative,❌ Not Productive,2025-09-17 20:20:43
-1758120643,Nitro,0.0,0.0,4.37,0,0.0,0.0,0.0,0.0,0.0,10.62,⚡ productivity & role clustering - google chrome,41.99,3,Designer,Creative,❌ Not Productive,2025-09-17 20:20:43
-1758120646,Nitro,0.0,0.0,6.89,0,0.0,0.0,0.0,0.0,0.0,13.14,⚡ productivity & role clustering - google chrome,41.99,3,Designer,Creative,❌ Not Productive,2025-09-17 20:20:46
-1758120646,Nitro,0.0,0.0,7.61,0,0.0,0.0,0.0,0.0,0.0,14.14,⚡ productivity & role clustering - google chrome,41.99,3,Designer,Creative,❌ Not Productive,2025-09-17 20:20:46
-1758120651,Nitro,0.0,0.46,0.0,0,0.0,0.0,0.0,0.0,0.0,18.46,⚡ productivity & role clustering - google chrome,51.04,3,Designer,Creative,❌ Not Productive,2025-09-17 20:20:51
-1758120651,Nitro,0.0,0.3,0.73,0,0.0,0.0,0.0,0.0,0.0,19.46,⚡ productivity & role clustering - google chrome,45.16,3,Designer,Creative,❌ Not Productive,2025-09-17 20:20:51
-1758120655,Nitro,0.0,0.0,4.89,0,0.0,0.0,0.0,0.0,0.0,23.61,⚡ productivity & role clustering - google chrome,41.99,1,Analyst,Business,❌ Not Productive,2025-09-17 20:20:56
-1758120656,Nitro,0.0,0.0,5.53,0,0.0,0.0,0.0,0.0,0.0,24.61,⚡ productivity & role clustering - google chrome,41.99,1,Analyst,Business,❌ Not Productive,2025-09-17 20:20:56
-1758120660,Nitro,0.0,0.16,3.96,0,0.0,0.0,0.0,0.0,0.0,28.96,⚡ productivity & role clustering - google chrome,42.15,1,Analyst,Business,❌ Not Productive,2025-09-17 20:21:01
-1758120661,Nitro,0.0,0.0,4.84,0,0.0,0.0,0.0,0.0,0.0,29.96,⚡ productivity & role clustering - google chrome,41.99,1,Analyst,Business,❌ Not Productive,2025-09-17 20:21:01
-1758120666,Nitro,0.0,2.05,0.0,0,0.0,0.0,0.0,0.0,0.0,34.13,⚡ productivity & role clustering - google chrome,51.06,1,Analyst,Business,❌ Not Productive,2025-09-17 20:21:06
-1758120671,Nitro,0.0,1.28,0.73,0,0.0,0.0,0.0,0.0,0.0,39.09,⚡ productivity & role clustering - google chrome,45.39,1,Analyst,Business,❌ Not Productive,2025-09-17 20:21:11
-1758120676,Nitro,0.0,1.51,1.99,0,0.0,0.0,0.0,0.0,0.0,44.12,⚡ productivity & role clustering - google chrome,42.35,1,Analyst,Business,❌ Not Productive,2025-09-17 20:21:16
-1758120681,Nitro,0.0,4.79,0.12,1,0.0,0.0,0.0,0.0,0.0,49.61,project2 - google chrome,49.49,1,Analyst,Business,❌ Not Productive,2025-09-17 20:21:21
-1758120686,Nitro,1.0,0.86,0.1,0,0.0,0.0,0.0,0.0,0.0,54.63,project2 - google chrome,67.62,1,Analyst,Business,❌ Not Productive,2025-09-17 20:21:26
-1758120691,Nitro,3.42,0.0,0.08,0,0.0,0.0,0.0,0.0,0.0,59.61,project2 - google chrome,76.23,1,Analyst,Business,✅ Productive,2025-09-17 20:21:31
-1758120694,Nitro,5.88,0.0,0.01,0,0.0,0.0,0.0,0.0,0.0,62.67,project2 - google chrome,76.22,1,Analyst,Business,✅ Productive,2025-09-17 20:21:34
-1758120696,Nitro,3.86,0.0,0.65,0,0.0,0.0,0.0,0.0,0.0,64.74,project2 - google chrome,71.9,1,Analyst,Business,✅ Productive,2025-09-17 20:21:36
-1758120696,Nitro,0.0,0.0,0.65,0,0.0,0.0,0.0,0.0,0.0,65.74,project2 - google chrome,46.33,1,Analyst,Business,❌ Not Productive,2025-09-17 20:21:36
-1758120701,Nitro,4.48,0.0,0.23,0,0.0,0.0,0.0,0.0,0.0,70.65,project2 - google chrome,76.26,1,Analyst,Business,✅ Productive,2025-09-17 20:21:41
-1758120706,Nitro,3.63,0.0,0.2,0,0.0,0.0,0.0,0.0,0.0,75.61,project2 - google chrome,76.24,1,Analyst,Business,✅ Productive,2025-09-17 20:21:46
-1758120711,Nitro,3.81,0.0,0.14,0,0.0,0.0,0.0,0.0,0.0,80.6,project2 - google chrome,76.24,1,Analyst,Business,✅ Productive,2025-09-17 20:21:51
-1758120716,Nitro,2.59,0.0,0.44,0,0.0,0.0,0.0,0.0,0.0,85.63,project2 - google chrome,75.73,1,Analyst,Business,✅ Productive,2025-09-17 20:21:56
-1758120721,Nitro,4.39,0.0,1.35,0,0.0,0.0,0.0,0.0,0.0,90.63,project2 - google chrome,70.26,1,Analyst,Business,✅ Productive,2025-09-17 20:22:01
-1758120726,Nitro,4.42,0.0,0.02,0,0.0,0.0,0.0,0.0,0.0,95.61,project2 - google chrome,76.22,1,Analyst,Business,✅ Productive,2025-09-17 20:22:06
-1758120731,Nitro,2.99,1.11,0.02,1,5.02,0.0,0.0,0.0,0.0,95.61,collect_realtime_data.py - productivity_role_predictor - visual studio code,77.36,1,Analyst,Business,✅ Productive,2025-09-17 20:22:11
-1758120736,Nitro,0.45,3.77,0.05,1,5.02,0.0,0.0,0.0,0.0,100.08,⚡ productivity & role clustering - google chrome,59.83,1,Analyst,Business,❌ Not Productive,2025-09-17 20:22:16
-1758120741,Nitro,1.11,4.35,0.07,1,10.45,0.0,0.0,0.0,0.0,100.08,collect_realtime_data.py - productivity_role_predictor - visual studio code,71.07,1,Analyst,Business,✅ Productive,2025-09-17 20:22:21
-1758120746,Nitro,0.4,5.55,0.41,1,10.45,0.0,0.0,0.0,0.0,100.08,open,56.05,1,Analyst,Business,❌ Not Productive,2025-09-17 20:22:26
-1758120751,Nitro,0.0,5.38,0.19,1,10.45,0.0,0.0,0.0,0.0,105.12,project2 - google chrome,51.63,1,Analyst,Business,❌ Not Productive,2025-09-17 20:22:31
-1758120754,Nitro,0.34,0.0,0.48,0,10.45,0.0,0.0,0.0,0.0,108.11,project2 - google chrome,54.63,1,Analyst,Business,❌ Not Productive,2025-09-17 20:22:34
-1758120756,Nitro,0.0,0.0,2.55,0,10.45,0.0,0.0,0.0,0.0,110.18,project2 - google chrome,44.56,1,Analyst,Business,❌ Not Productive,2025-09-17 20:22:36
-1758120756,Nitro,0.0,0.0,2.56,0,10.45,0.0,0.0,0.0,0.0,111.18,project2 - google chrome,44.56,1,Analyst,Business,❌ Not Productive,2025-09-17 20:22:36
-1758120761,Nitro,0.0,0.0,7.47,0,10.45,0.0,0.0,0.0,0.0,116.09,project2 - google chrome,44.56,1,Analyst,Business,❌ Not Productive,2025-09-17 20:22:41
-1758120766,Nitro,0.0,0.61,2.89,0,10.45,0.0,0.0,0.0,0.0,121.12,project2 - google chrome,44.68,1,Analyst,Business,❌ Not Productive,2025-09-17 20:22:46
-1758120770,Nitro,0.0,6.74,0.01,1,10.45,0.0,0.0,0.0,0.0,125.56,⚡ productivity & role clustering - google chrome,52.25,1,Analyst,Business,❌ Not Productive,2025-09-17 20:22:51
-1758120775,Nitro,0.0,2.24,0.0,0,10.45,0.0,0.0,0.0,0.0,130.58,⚡ productivity & role clustering - google chrome,53.18,1,Analyst,Business,❌ Not Productive,2025-09-17 20:22:56
-1758120780,Nitro,0.2,5.33,0.05,1,10.45,0.0,0.0,0.0,0.0,130.58,snipping tool overlay,56.16,1,Analyst,Business,❌ Not Productive,2025-09-17 20:23:01
-1758120786,Nitro,0.72,10.25,0.16,1,10.45,0.0,0.0,0.0,0.0,136.1,project2 - google chrome,59.94,1,Analyst,Business,❌ Not Productive,2025-09-17 20:23:06
-1758120791,Nitro,3.4,0.0,0.23,0,10.45,0.0,0.0,0.0,0.0,141.1,project2 - google chrome,77.88,1,Analyst,Business,✅ Productive,2025-09-17 20:23:11
-1758120795,Nitro,2.01,5.56,0.0,1,10.45,0.0,0.0,0.0,0.0,145.58,⚡ productivity & role clustering - google chrome,77.72,1,Analyst,Business,✅ Productive,2025-09-17 20:23:16
-1758120801,Nitro,1.81,2.88,0.1,1,10.45,0.0,0.0,0.0,0.0,151.1,project2 - google chrome,77.31,1,Analyst,Business,✅ Productive,2025-09-17 20:23:21
-1758120806,Nitro,4.6,0.0,0.17,0,10.45,0.0,0.0,0.0,0.0,156.1,project2 - google chrome,77.82,1,Analyst,Business,✅ Productive,2025-09-17 20:23:26
-1758120811,Nitro,4.78,0.0,0.09,0,10.45,0.0,0.0,0.0,0.0,161.11,project2 - google chrome,77.81,1,Analyst,Business,✅ Productive,2025-09-17 20:23:31
-1758120814,Nitro,5.36,0.0,0.36,0,10.45,0.0,0.0,0.0,0.0,164.1,project2 - google chrome,77.51,1,Analyst,Business,✅ Productive,2025-09-17 20:23:34
-1758120816,Nitro,4.81,0.0,0.03,0,10.45,0.0,0.0,0.0,0.0,166.18,project2 - google chrome,77.8,1,Analyst,Business,✅ Productive,2025-09-17 20:23:36
-1758120816,Nitro,0.0,0.0,0.04,0,10.45,0.0,0.0,0.0,0.0,167.18,project2 - google chrome,52.5,1,Analyst,Business,❌ Not Productive,2025-09-17 20:23:36
-1758120821,Nitro,4.06,0.0,0.0,0,10.45,0.0,0.0,0.0,0.0,172.1,project2 - google chrome,78.19,1,Analyst,Business,✅ Productive,2025-09-17 20:23:41
-1758120826,Nitro,3.99,0.0,1.07,0,10.45,0.0,0.0,0.0,0.0,177.11,project2 - google chrome,71.29,1,Analyst,Business,✅ Productive,2025-09-17 20:23:46
-1758120831,Nitro,0.0,0.9,0.11,0,10.45,0.0,0.0,0.0,0.0,182.15,project2 - google chrome,52.08,1,Analyst,Business,❌ Not Productive,2025-09-17 20:23:51
-1758120836,Nitro,0.0,0.0,5.05,0,10.45,0.0,0.0,0.0,0.0,187.09,project2 - google chrome,44.56,1,Analyst,Business,❌ Not Productive,2025-09-17 20:23:56
-1758120841,Nitro,0.0,0.0,10.04,0,10.45,0.0,0.0,0.0,0.0,192.08,project2 - google chrome,44.56,1,Analyst,Business,❌ Not Productive,2025-09-17 20:24:01
-1758120846,Nitro,0.0,0.0,15.04,0,10.45,0.0,0.0,0.0,0.0,197.08,project2 - google chrome,44.56,1,Analyst,Business,❌ Not Productive,2025-09-17 20:24:06
-1758120851,Nitro,0.0,0.0,20.03,0,10.45,0.0,0.0,0.0,0.0,202.08,project2 - google chrome,44.56,1,Analyst,Business,❌ Not Productive,2025-09-17 20:24:11
-1758120856,Nitro,0.0,0.0,25.06,0,10.45,0.0,0.0,0.0,0.0,207.11,project2 - google chrome,44.56,1,Analyst,Business,❌ Not Productive,2025-09-17 20:24:16
-1758120874,Nitro,2.53,2.3,0.05,0,10.45,0.0,0.0,0.0,0.0,226.27,project2 - google chrome,77.58,1,Analyst,Business,✅ Productive,2025-09-17 20:24:34
-1758120874,Nitro,46.0,41.77,0.05,0,10.45,0.0,0.0,0.0,0.0,208.11,project2 - google chrome,77.52,1,Analyst,Business,✅ Productive,2025-09-17 20:24:34
-1758120876,Nitro,0.0,2.2,0.1,0,10.45,0.0,0.0,0.0,0.0,228.27,project2 - google chrome,52.09,1,Analyst,Business,❌ Not Productive,2025-09-17 20:24:36
-1758120876,Nitro,0.0,0.0,0.11,0,10.45,0.0,0.0,0.0,0.0,229.27,project2 - google chrome,52.14,1,Analyst,Business,❌ Not Productive,2025-09-17 20:24:36
-1758258128,Nitro,0.0,0.0,1.34,0,0.0,0.0,0.0,0.0,0.0,1.34,streamlit - google chrome,25.66,3,Designer,Creative,❌ Not Productive,2025-09-19 10:32:08
-1758258130,Nitro,0.0,1.43,0.0,1,0.0,0.0,0.0,0.0,0.0,3.23,⚡ productivity & role clustering - google chrome,25.8,3,Designer,Creative,❌ Not Productive,2025-09-19 10:32:10
-1758258136,Nitro,0.0,0.0,1.75,0,0.0,0.0,0.0,0.0,0.0,10.39,streamlit - google chrome,25.04,3,Designer,Creative,❌ Not Productive,2025-09-19 10:32:16
-1758258136,Nitro,0.0,4.22,1.74,1,0.0,0.0,0.0,0.0,0.0,9.39,streamlit - google chrome,25.02,3,Designer,Creative,❌ Not Productive,2025-09-19 10:32:16
-1758258138,Nitro,0.0,0.0,4.19,1,0.0,0.0,0.0,0.0,0.0,12.83,⚡ productivity & role clustering - google chrome,23.78,3,Designer,Creative,❌ Not Productive,2025-09-19 10:32:18
-1758258139,Nitro,0.0,29.43,0.0,0,0.0,0.0,0.0,0.0,0.0,13.92,⚡ productivity & role clustering - google chrome,25.14,3,Designer,Creative,❌ Not Productive,2025-09-19 10:32:20
-1758258143,Nitro,0.0,22.01,0.0,0,0.0,0.0,0.0,0.0,0.0,17.9,⚡ productivity & role clustering - google chrome,25.44,3,Designer,Creative,❌ Not Productive,2025-09-19 10:32:24
-1758258144,Nitro,0.0,34.31,0.01,0,0.0,0.0,0.0,0.0,0.0,18.9,⚡ productivity & role clustering - google chrome,24.86,1,Analyst,Business,❌ Not Productive,2025-09-19 10:32:25
-1758258148,Nitro,0.5,39.78,0.01,0,0.0,0.0,0.0,0.0,0.0,22.86,⚡ productivity & role clustering - google chrome,24.8,1,Analyst,Business,❌ Not Productive,2025-09-19 10:32:29
-1758258149,Nitro,7.88,0.0,0.05,0,0.0,0.0,0.0,0.0,0.0,23.88,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:32:30
-1758258153,Nitro,13.27,0.0,0.07,0,0.0,0.0,0.0,0.0,0.0,27.87,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:32:34
-1758258154,Nitro,13.49,0.0,0.04,0,0.0,0.0,0.0,0.0,0.0,28.91,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:32:35
-1758258158,Nitro,0.76,1.34,1.92,0,0.0,0.0,0.0,0.0,0.0,32.85,⚡ productivity & role clustering - google chrome,24.79,1,Analyst,Business,❌ Not Productive,2025-09-19 10:32:39
-1758258159,Nitro,0.0,0.0,2.97,0,0.0,0.0,0.0,0.0,0.0,33.9,⚡ productivity & role clustering - google chrome,23.71,1,Analyst,Business,❌ Not Productive,2025-09-19 10:32:40
-1758258163,Nitro,0.0,0.09,2.0,0,0.0,0.0,0.0,0.0,0.0,37.88,⚡ productivity & role clustering - google chrome,24.79,1,Analyst,Business,❌ Not Productive,2025-09-19 10:32:44
-1758258168,Nitro,0.0,0.52,1.16,0,0.0,0.0,0.0,0.0,0.0,42.88,⚡ productivity & role clustering - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:32:49
-1758258173,Nitro,0.0,0.0,6.15,0,0.0,0.0,0.0,0.0,0.0,47.86,⚡ productivity & role clustering - google chrome,23.48,1,Analyst,Business,❌ Not Productive,2025-09-19 10:32:53
-1758258178,Nitro,0.0,0.0,11.13,0,0.0,0.0,0.0,0.0,0.0,52.85,⚡ productivity & role clustering - google chrome,22.91,1,Analyst,Business,❌ Not Productive,2025-09-19 10:32:58
-1758258183,Nitro,0.0,0.0,16.12,0,0.0,0.0,0.0,0.0,0.0,57.83,⚡ productivity & role clustering - google chrome,21.92,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:03
-1758258188,Nitro,0.0,1.16,0.0,0,0.0,0.0,0.0,0.0,0.0,62.86,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:09
-1758258193,Nitro,0.0,0.43,4.71,0,0.0,0.0,0.0,0.0,0.0,67.83,⚡ productivity & role clustering - google chrome,23.5,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:13
-1758258197,Nitro,0.0,0.0,8.8,0,0.0,0.0,0.0,0.0,0.0,71.93,⚡ productivity & role clustering - google chrome,23.28,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:18
-1758258198,Nitro,0.0,0.0,9.75,0,0.0,0.0,0.0,0.0,0.0,72.93,⚡ productivity & role clustering - google chrome,23.29,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:19
-1758258199,Nitro,0.0,3.13,0.02,0,0.0,0.0,0.0,0.0,0.0,73.97,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:20
-1758258203,Nitro,0.0,0.01,3.76,0,0.0,0.0,0.0,0.0,0.0,77.88,⚡ productivity & role clustering - google chrome,23.5,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:24
-1758258208,Nitro,7.6,0.41,0.04,0,0.0,0.0,0.0,0.0,0.0,82.88,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:29
-1758258213,Nitro,6.77,1.83,0.19,1,0.0,0.0,0.0,0.0,0.0,82.88,snipping tool overlay,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:34
-1758258218,Nitro,0.0,11.77,0.19,1,0.0,0.0,0.0,0.0,0.0,87.92,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:39
-1758258223,Nitro,1.19,0.77,3.25,0,0.0,0.0,0.0,0.0,0.0,92.96,project2 - google chrome,23.56,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:44
-1758258228,Nitro,0.0,0.0,8.2,0,0.0,0.0,0.0,0.0,0.0,97.91,project2 - google chrome,23.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:48
-1758258233,Nitro,0.0,0.0,13.2,0,0.0,0.0,0.0,0.0,0.0,102.91,project2 - google chrome,22.45,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:53
-1758258238,Nitro,0.0,0.0,18.21,0,0.0,0.0,0.0,0.0,0.0,107.92,project2 - google chrome,21.61,1,Analyst,Business,❌ Not Productive,2025-09-19 10:33:59
-1758258243,Nitro,0.0,0.0,23.21,0,0.0,0.0,0.0,0.0,0.0,112.92,project2 - google chrome,11.05,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:04
-1758258248,Nitro,4.19,0.08,0.07,0,0.0,0.0,0.0,0.0,0.0,117.93,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:09
-1758258253,Nitro,2.2,0.0,0.04,0,0.0,0.0,0.0,0.0,0.0,122.93,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:14
-1758258257,Nitro,3.72,0.0,0.86,0,0.0,0.0,0.0,0.0,0.0,126.95,project2 - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:18
-1758258258,Nitro,0.0,0.0,1.81,0,0.0,0.0,0.0,0.0,0.0,127.95,project2 - google chrome,24.79,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:18
-1758258259,Nitro,0.0,0.0,2.83,0,0.0,0.0,0.0,0.0,0.0,128.97,project2 - google chrome,23.71,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:20
-1758258263,Nitro,2.97,0.0,0.92,0,0.0,0.0,0.0,0.0,0.0,133.01,project2 - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:24
-1758258268,Nitro,0.0,9.97,0.93,0,0.0,0.0,0.0,0.0,0.0,137.93,project2 - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:28
-1758258273,Nitro,4.0,0.0,0.26,0,0.0,0.0,0.0,0.0,0.0,142.93,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:33
-1758258278,Nitro,4.21,0.0,0.02,0,0.0,0.0,0.0,0.0,0.0,147.92,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:38
-1758258283,Nitro,1.01,4.9,0.0,1,0.0,0.0,0.0,0.0,0.0,152.88,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:43
-1758258288,Nitro,2.38,2.09,0.17,1,0.0,0.0,0.0,0.0,0.0,157.92,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:48
-1758258293,Nitro,3.59,0.0,0.34,0,0.0,0.0,0.0,0.0,0.0,162.94,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:53
-1758258298,Nitro,4.6,0.0,0.41,0,0.0,0.0,0.0,0.0,0.0,167.94,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:34:58
-1758258303,Nitro,1.2,0.0,0.28,0,0.0,0.0,0.0,0.0,0.0,172.92,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:03
-1758258308,Nitro,0.2,4.11,0.01,1,0.0,0.0,0.0,0.0,0.0,177.84,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:08
-1758258313,Nitro,0.0,0.98,2.29,0,0.0,0.0,0.0,0.0,0.0,182.86,⚡ productivity & role clustering - google chrome,24.62,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:13
-1758258317,Nitro,0.0,2.2,1.07,0,0.0,0.0,0.0,0.0,0.0,186.98,⚡ productivity & role clustering - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:18
-1758258318,Nitro,0.0,0.0,1.94,0,0.0,0.0,0.0,0.0,0.0,187.98,⚡ productivity & role clustering - google chrome,24.79,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:18
-1758258319,Nitro,0.0,0.0,3.01,0,0.0,0.0,0.0,0.0,0.0,189.05,⚡ productivity & role clustering - google chrome,23.56,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:19
-1758258323,Nitro,0.0,0.0,6.95,0,0.0,0.0,0.0,0.0,0.0,192.98,⚡ productivity & role clustering - google chrome,23.46,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:23
-1758258328,Nitro,0.0,0.0,11.96,0,0.0,0.0,0.0,0.0,0.0,198.0,⚡ productivity & role clustering - google chrome,22.48,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:28
-1758258333,Nitro,0.0,0.6,0.3,0,0.0,0.0,0.0,0.0,0.0,202.98,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:33
-1758258338,Nitro,0.79,2.29,0.32,0,0.0,0.0,0.0,0.0,0.0,202.98,,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:38
-1758258343,Nitro,1.99,4.5,0.61,1,0.0,0.0,0.0,0.0,0.0,208.01,project2 - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:43
-1758258348,Nitro,4.59,0.0,0.22,0,0.0,0.0,0.0,0.0,0.0,213.02,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:49
-1758258353,Nitro,5.22,0.0,0.08,0,0.0,0.0,0.0,0.0,0.0,218.0,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:53
-1758258358,Nitro,4.0,0.0,0.1,0,0.0,0.0,0.0,0.0,0.0,223.0,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:35:58
-1758258363,Nitro,0.0,5.58,0.0,1,0.0,0.0,0.0,0.0,0.0,227.93,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:03
-1758258368,Nitro,2.16,5.47,0.02,1,0.0,0.0,0.0,0.0,0.0,233.02,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:08
-1758258373,Nitro,4.02,0.01,0.7,0,0.0,0.0,0.0,0.0,0.0,238.0,project2 - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:13
-1758258378,Nitro,0.0,4.26,3.05,1,0.0,0.0,0.0,0.0,0.0,242.28,⚡ productivity & role clustering - google chrome,23.56,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:18
-1758258378,Nitro,0.0,9.93,0.01,0,0.0,0.0,0.0,0.0,0.0,243.28,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:18
-1758258379,Nitro,0.0,2.21,0.0,0,0.0,0.0,0.0,0.0,0.0,244.4,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:20
-1758258383,Nitro,3.24,2.86,0.03,1,0.0,0.0,0.0,0.0,0.0,248.4,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:23
-1758258388,Nitro,3.62,0.0,0.14,0,0.0,0.0,0.0,0.0,0.0,253.37,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:28
-1758258393,Nitro,3.97,0.0,0.04,0,0.0,0.0,0.0,0.0,0.0,258.41,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:34
-1758258398,Nitro,3.19,0.0,0.04,0,0.0,0.0,0.0,0.0,0.0,263.42,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:39
-1758258403,Nitro,0.4,6.84,0.0,0,0.0,0.0,0.0,0.0,0.0,268.38,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:43
-1758258408,Nitro,4.39,1.31,0.18,0,0.0,0.0,0.0,0.0,0.0,273.39,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:48
-1758258413,Nitro,3.21,0.0,0.71,0,0.0,0.0,0.0,0.0,0.0,278.38,project2 - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:53
-1758258418,Nitro,4.21,0.0,0.06,0,0.0,0.0,0.0,0.0,0.0,283.37,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:36:58
-1758258423,Nitro,4.59,0.0,0.02,0,0.0,0.0,0.0,0.0,0.0,288.37,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:03
-1758258428,Nitro,2.0,0.0,1.72,0,0.0,0.0,0.0,0.0,0.0,293.37,project2 - google chrome,24.79,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:08
-1758258433,Nitro,6.23,0.0,0.62,0,0.0,0.0,0.0,0.0,0.0,298.35,project2 - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:13
-1758258437,Nitro,1.99,0.0,0.48,0,0.0,0.0,0.0,0.0,0.0,302.37,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:17
-1758258438,Nitro,4.0,0.0,0.31,0,0.0,0.0,0.0,0.0,0.0,303.37,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:18
-1758258439,Nitro,2.0,0.0,0.41,0,0.0,0.0,0.0,0.0,0.0,304.37,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:19
-1758258443,Nitro,4.01,0.0,0.08,0,0.0,0.0,0.0,0.0,0.0,308.36,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:23
-1758258448,Nitro,8.18,0.0,0.02,0,0.0,0.0,0.0,0.0,0.0,313.37,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:28
-1758258453,Nitro,2.2,0.0,0.93,0,0.0,0.0,0.0,0.0,0.0,318.37,project2 - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:33
-1758258458,Nitro,0.41,4.47,0.85,1,0.0,0.0,0.0,0.0,0.0,323.28,⚡ productivity & role clustering - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:38
-1758258463,Nitro,0.0,3.29,0.0,0,0.0,0.0,0.0,0.0,0.0,328.29,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:43
-1758258469,Nitro,3.5,2.63,0.01,1,0.0,0.0,0.0,0.0,0.0,333.72,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:49
-1758258474,Nitro,3.14,0.0,0.3,0,0.0,0.0,0.0,0.0,0.0,338.5,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:54
-1758258478,Nitro,3.89,0.0,0.16,0,0.0,0.0,0.0,0.0,0.0,343.38,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:37:58
-1758258483,Nitro,0.0,5.24,1.1,1,0.0,0.0,0.0,0.0,0.0,348.31,⚡ productivity & role clustering - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:03
-1758258488,Nitro,0.0,8.03,0.37,0,0.0,0.0,0.0,0.0,0.0,353.31,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:08
-1758258493,Nitro,0.2,6.47,0.0,1,0.0,0.0,0.0,0.0,0.0,353.31,snipping tool overlay,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:13
-1758258497,Nitro,0.0,10.0,0.04,1,0.0,0.0,0.0,0.0,0.0,357.42,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:17
-1758258498,Nitro,1.0,11.83,0.23,0,0.0,0.0,0.0,0.0,0.0,358.42,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:19
-1758258499,Nitro,5.96,0.0,0.74,0,0.0,0.0,0.0,0.0,0.0,359.43,project2 - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:19
-1758258503,Nitro,0.0,7.96,0.04,1,0.0,0.0,0.0,0.0,0.0,363.35,⚡ productivity & role clustering - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:23
-1758258508,Nitro,1.59,2.75,0.45,1,0.0,0.0,0.0,0.0,0.0,368.37,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:28
-1758258513,Nitro,0.0,0.0,5.48,0,0.0,0.0,0.0,0.0,0.0,373.4,project2 - google chrome,23.53,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:33
-1758258518,Nitro,0.0,0.21,0.32,0,0.0,0.0,0.0,0.0,0.0,378.41,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:38
-1758258523,Nitro,2.61,0.0,1.51,0,0.0,0.0,0.0,0.0,0.0,383.39,project2 - google chrome,24.79,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:43
-1758258528,Nitro,2.41,2.32,0.0,0,0.0,0.0,0.0,0.0,0.0,388.38,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:48
-1758258533,Nitro,0.0,4.26,0.95,0,0.0,0.0,0.0,0.0,0.0,393.42,project2 - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:53
-1758258538,Nitro,3.63,0.0,1.52,0,0.0,0.0,0.0,0.0,0.0,398.38,project2 - google chrome,24.79,1,Analyst,Business,❌ Not Productive,2025-09-19 10:38:58
-1758258543,Nitro,2.58,0.0,0.07,0,0.0,0.0,0.0,0.0,0.0,403.41,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:39:03
-1758258548,Nitro,4.41,0.0,0.37,0,0.0,0.0,0.0,0.0,0.0,408.41,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:39:08
-1758258553,Nitro,5.01,0.0,0.02,0,0.0,0.0,0.0,0.0,0.0,413.4,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:39:13
-1758258557,Nitro,4.46,0.0,0.04,0,0.0,0.0,0.0,0.0,0.0,417.43,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:39:18
-1758258558,Nitro,5.0,0.0,0.14,0,0.0,0.0,0.0,0.0,0.0,418.43,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:39:18
-1758258559,Nitro,1.94,0.0,0.17,0,0.0,0.0,0.0,0.0,0.0,419.46,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:39:19
-1758258563,Nitro,4.27,0.0,0.02,0,0.0,0.0,0.0,0.0,0.0,423.45,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:39:23
-1758258580,Nitro,3.41,0.66,0.28,0,0.0,0.0,0.0,0.0,0.0,439.88,project2 - google chrome,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:39:40
-1758258583,Nitro,0.0,2.25,1.37,1,0.0,0.0,0.0,0.0,0.0,443.38,⚡ productivity & role clustering - google chrome,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 10:39:43
-1758258588,Nitro,0.6,0.0,0.12,1,0.0,0.0,0.0,0.0,0.0,443.38,task switching,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:39:48
-1758259077,Nitro,0.0,0.0,1.67,0,0,0.0,0.0,0.0,0.0,0.0,1.67,⚡ productivity & role clustering - google chrome,0,25.18,3,Designer,Creative,❌ Not Productive,2025-09-19 10:47:57
-1758259083,Nitro,0.0,1.54,1.32,0,0,0.0,0.0,0.0,0.0,0.0,7.62,⚡ productivity & role clustering - google chrome,0,25.5,3,Designer,Creative,❌ Not Productive,2025-09-19 10:48:03
-1758259088,Nitro,0.0,0.0,6.32,0,0,0.0,0.0,0.0,0.0,0.0,12.62,⚡ productivity & role clustering - google chrome,0,23.76,3,Designer,Creative,❌ Not Productive,2025-09-19 10:48:08
-1758259093,Nitro,0.0,0.0,11.33,0,0,0.0,0.0,0.0,0.0,0.0,17.63,⚡ productivity & role clustering - google chrome,0,22.94,3,Designer,Creative,❌ Not Productive,2025-09-19 10:48:13
-1758259098,Nitro,0.0,0.0,16.32,0,0,0.0,0.0,0.0,0.0,0.0,22.63,⚡ productivity & role clustering - google chrome,0,21.92,1,Analyst,Business,❌ Not Productive,2025-09-19 10:48:18
-1758259103,Nitro,0.2,1.46,0.14,1,1,0.0,0.0,0.0,0.0,0.0,22.63,snipping tool overlay,0,25.44,3,Designer,Creative,❌ Not Productive,2025-09-19 10:48:23
-1758259108,Nitro,0.0,13.13,0.07,1,2,0.0,0.0,0.0,0.0,0.0,28.41,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:48:29
-1758259113,Nitro,1.61,1.36,0.44,0,2,0.0,0.0,0.0,0.0,0.0,33.39,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:48:34
-1758259118,Nitro,1.6,2.13,0.23,0,2,0.0,0.0,0.0,0.0,0.0,38.38,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:48:39
-1758259123,Nitro,1.8,5.74,0.06,0,2,0.0,0.0,0.0,0.0,0.0,43.38,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:48:44
-1758259128,Nitro,0.6,0.0,4.29,0,2,0.0,0.0,0.0,0.0,0.0,48.38,project2 - google chrome,0,23.5,1,Analyst,Business,❌ Not Productive,2025-09-19 10:48:49
-1758259133,Nitro,0.0,0.0,9.27,0,2,0.0,0.0,0.0,0.0,0.0,53.36,project2 - google chrome,0,23.29,1,Analyst,Business,❌ Not Productive,2025-09-19 10:48:53
-1758259138,Nitro,0.79,0.0,1.58,0,2,0.0,0.0,0.0,0.0,0.0,58.4,project2 - google chrome,0,24.79,1,Analyst,Business,❌ Not Productive,2025-09-19 10:48:59
-1758259143,Nitro,0.0,6.04,0.15,1,3,0.0,0.0,0.0,0.0,0.0,62.61,⚡ productivity & role clustering - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:49:03
-1758259148,Nitro,3.97,1.92,0.18,1,4,0.0,0.0,0.0,0.0,0.0,68.4,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:49:09
-1758259153,Nitro,4.62,0.0,0.11,0,4,0.0,0.0,0.0,0.0,0.0,73.38,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:49:14
-1758259158,Nitro,4.19,0.0,0.21,0,4,0.0,0.0,0.0,0.0,0.0,78.4,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:49:19
-1758259163,Nitro,4.02,0.0,0.13,0,4,0.0,0.0,0.0,0.0,0.0,83.38,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:49:24
-1758259168,Nitro,3.78,0.0,0.15,0,4,0.0,0.0,0.0,0.0,0.0,88.41,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:49:29
-1758259173,Nitro,3.8,0.05,0.0,0,4,0.0,0.0,0.0,0.0,0.0,93.4,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:49:34
-1758259178,Nitro,5.22,0.03,0.04,0,4,0.0,0.0,0.0,0.0,0.0,98.39,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:49:39
-1758259183,Nitro,4.41,0.0,0.03,0,4,0.0,0.0,0.0,0.0,0.0,103.37,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:49:44
-1758259188,Nitro,2.6,0.0,0.4,0,4,0.0,0.0,0.0,0.0,0.0,108.37,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:49:49
-1758259193,Nitro,2.38,0.0,0.09,0,4,0.0,0.0,0.0,0.0,0.0,113.41,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:49:54
-1758259198,Nitro,4.42,0.0,0.03,0,4,0.0,0.0,0.0,0.0,0.0,118.38,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:49:59
-1758259217,Nitro,3.47,0.0,0.28,0,4,0.0,0.0,0.0,0.0,0.0,137.42,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:50:18
-1758259278,Nitro,3.58,0.05,7.32,0,4,0.0,0.0,0.0,0.0,0.0,197.45,project2 - google chrome,0,23.33,1,Analyst,Business,❌ Not Productive,2025-09-19 10:51:18
-1758259337,Nitro,1.43,0.03,0.25,0,4,0.0,0.0,0.0,0.0,0.0,257.42,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:52:18
-1758259398,Nitro,2.92,0.0,0.14,0,4,0.0,0.0,0.0,0.0,0.0,317.44,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:53:18
-1758259403,Nitro,1.54,6.12,0.01,1,5,0.0,0.0,0.0,0.0,0.0,322.63,⚡ productivity & role clustering - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:53:23
-1758259408,Nitro,3.3,2.14,0.15,1,6,0.0,0.0,0.0,0.0,0.0,328.38,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:53:29
-1758259413,Nitro,4.4,0.0,0.01,0,6,0.0,0.0,0.0,0.0,0.0,333.38,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 10:53:34
-1758259418,Nitro,1.6,0.0,2.8,0,6,0.0,0.0,0.0,0.0,0.0,338.37,project2 - google chrome,0,23.71,1,Analyst,Business,❌ Not Productive,2025-09-19 10:53:39
-1758259423,Nitro,0.0,0.0,7.81,0,6,0.0,0.0,0.0,0.0,0.0,343.38,project2 - google chrome,0,23.29,1,Analyst,Business,❌ Not Productive,2025-09-19 10:53:44
-1758259428,Nitro,0.0,0.0,12.83,0,6,0.0,0.0,0.0,0.0,0.0,348.4,project2 - google chrome,0,22.46,1,Analyst,Business,❌ Not Productive,2025-09-19 10:53:49
-1758259433,Nitro,0.0,0.0,17.82,0,6,0.0,0.0,0.0,0.0,0.0,353.39,project2 - google chrome,0,21.61,1,Analyst,Business,❌ Not Productive,2025-09-19 10:53:54
-1758259438,Nitro,0.0,0.0,22.8,0,6,0.0,0.0,0.0,0.0,0.0,358.37,project2 - google chrome,0,11.08,1,Analyst,Business,❌ Not Productive,2025-09-19 10:53:59
-1758259444,Nitro,0.0,0.0,27.86,0,6,0.0,0.0,0.0,0.0,0.0,363.44,project2 - google chrome,0,10.71,1,Analyst,Business,❌ Not Productive,2025-09-19 10:54:04
-1758259448,Nitro,0.0,0.0,32.8,0,6,0.0,0.0,0.0,0.0,0.0,368.37,project2 - google chrome,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 10:54:09
-1758259454,Nitro,0.0,0.0,37.88,0,6,0.0,0.0,0.0,0.0,0.0,373.46,project2 - google chrome,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 10:54:14
-1758259458,Nitro,0.0,0.0,42.8,0,6,0.0,0.0,0.0,0.0,0.0,378.38,project2 - google chrome,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 10:54:19
-1758259463,Nitro,0.0,0.0,47.82,0,6,0.0,0.0,0.0,0.0,0.0,383.39,project2 - google chrome,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 10:54:24
-1758259849,Nitro,0.0,0.0,1.04,0,0,0.0,0.0,0.0,0.0,0.0,1.04,streamlit - google chrome,0,25.66,3,Designer,Creative,❌ Not Productive,2025-09-19 11:00:49,1758259848
-1758259853,Nitro,0.0,2.84,0.76,1,1,0.0,0.0,0.0,0.0,0.0,5.24,⚡ productivity & role clustering - google chrome,0,25.64,3,Designer,Creative,❌ Not Productive,2025-09-19 11:00:53,1758259853
-1758259857,Nitro,0.0,84.53,0.0,0,1,0.0,0.0,0.0,0.0,0.0,9.79,⚡ productivity & role clustering - google chrome,0,24.55,0,Developer,Technical,❌ Not Productive,2025-09-19 11:00:57,1758259856
-1758259857,Nitro,0.0,23.8,0.0,0,1,0.0,0.0,0.0,0.0,0.0,8.79,⚡ productivity & role clustering - google chrome,0,25.65,3,Designer,Creative,❌ Not Productive,2025-09-19 11:00:57,1758259856
-1758259860,Nitro,0.0,12.72,1.31,0,1,0.0,0.0,0.0,0.0,0.0,12.8,⚡ productivity & role clustering - google chrome,0,25.4,3,Designer,Creative,❌ Not Productive,2025-09-19 11:01:00,1758259860
-1758259861,Nitro,0.0,0.0,3.1,0,1,0.0,0.0,0.0,0.0,0.0,14.59,⚡ productivity & role clustering - google chrome,0,23.64,3,Designer,Creative,❌ Not Productive,2025-09-19 11:01:02,1758259861
-1758259865,Nitro,0.0,1.8,0.0,0,1,0.0,0.0,0.0,0.0,0.0,17.85,⚡ productivity & role clustering - google chrome,0,25.46,3,Designer,Creative,❌ Not Productive,2025-09-19 11:01:05,1758259865
-1758259866,Nitro,9.17,1.25,0.09,0,1,0.0,0.0,0.0,0.0,0.0,19.6,⚡ productivity & role clustering - google chrome,0,25.44,3,Designer,Creative,❌ Not Productive,2025-09-19 11:01:07,1758259866
-1758259870,Nitro,15.39,0.0,0.0,0,1,0.0,0.0,0.0,0.0,0.0,22.78,⚡ productivity & role clustering - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:01:10,1758259870
-1758259871,Nitro,15.58,0.0,0.08,0,1,0.0,0.0,0.0,0.0,0.0,24.58,⚡ productivity & role clustering - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:01:12,1758259871
-1758259875,Nitro,16.43,0.0,0.01,0,1,0.0,0.0,0.0,0.0,0.0,27.8,⚡ productivity & role clustering - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:01:15,1758259875
-1758259876,Nitro,13.37,0.0,0.14,0,1,0.0,0.0,0.0,0.0,0.0,29.6,⚡ productivity & role clustering - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:01:17,1758259876
-1758259880,Nitro,0.0,0.0,3.34,0,1,0.0,0.0,0.0,0.0,0.0,32.79,⚡ productivity & role clustering - google chrome,0,23.56,1,Analyst,Business,❌ Not Productive,2025-09-19 11:01:20,1758259880
-1758259881,Nitro,0.0,2.51,0.02,0,1,0.0,0.0,0.0,0.0,0.0,34.6,⚡ productivity & role clustering - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:01:22,1758259881
-1758259885,Nitro,0.0,0.18,2.89,0,1,0.0,0.0,0.0,0.0,0.0,37.8,⚡ productivity & role clustering - google chrome,0,23.71,1,Analyst,Business,❌ Not Productive,2025-09-19 11:01:25,1758259885
-1758259890,Nitro,0.0,0.0,7.93,0,1,0.0,0.0,0.0,0.0,0.0,42.83,⚡ productivity & role clustering - google chrome,0,23.29,1,Analyst,Business,❌ Not Productive,2025-09-19 11:01:30,1758259890
-1758259895,Nitro,0.4,0.0,0.22,1,2,0.0,0.0,0.0,0.0,0.0,42.83,task switching,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:01:35,1758259895
-1758259900,Nitro,6.96,2.06,0.01,1,3,0.0,0.0,0.0,0.0,0.0,47.86,⚡ productivity & role clustering - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:01:40,1758259900
-1758259905,Nitro,0.0,1.5,4.65,1,4,0.0,0.0,0.0,0.0,0.0,53.63,project2 - google chrome,0,23.5,1,Analyst,Business,❌ Not Productive,2025-09-19 11:01:46,1758259905
-1758259910,Nitro,0.0,0.0,9.62,0,4,0.0,0.0,0.0,0.0,0.0,58.61,project2 - google chrome,0,23.29,1,Analyst,Business,❌ Not Productive,2025-09-19 11:01:51,1758259910
-1758259915,Nitro,0.0,0.0,14.63,0,4,0.0,0.0,0.0,0.0,0.0,63.61,project2 - google chrome,0,22.28,1,Analyst,Business,❌ Not Productive,2025-09-19 11:01:56,1758259915
-1758259920,Nitro,0.0,0.83,0.33,0,4,0.0,0.0,0.0,0.0,0.0,68.62,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:02:01,1758259920
-1758259925,Nitro,0.0,0.0,5.35,0,4,0.0,0.0,0.0,0.0,0.0,73.64,project2 - google chrome,0,23.53,1,Analyst,Business,❌ Not Productive,2025-09-19 11:02:06,1758259925
-1758259930,Nitro,2.41,1.16,0.7,0,4,0.0,0.0,0.0,0.0,0.0,78.62,project2 - google chrome,0,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 11:02:11,1758259930
-1758259935,Nitro,1.17,5.1,0.02,1,5,0.0,0.0,0.0,0.0,0.0,82.88,⚡ productivity & role clustering - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:02:15,1758259935
-1758259938,Nitro,0.36,3.54,0.21,1,6,0.0,0.0,0.0,0.0,0.0,82.88,snipping tool overlay,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:02:18,1758259937
-1758259940,Nitro,0.0,16.1,0.12,1,7,0.0,0.0,0.0,0.0,0.0,85.08,⚡ productivity & role clustering - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:02:20,1758259940
-1758259945,Nitro,1.22,3.63,0.06,1,8,0.0,0.0,0.0,0.0,0.0,90.84,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:02:26,1758259945
-1758259950,Nitro,3.83,0.0,0.43,0,8,0.0,0.0,0.0,0.0,0.0,95.8,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:02:30,1758259950
-1758259955,Nitro,2.98,0.0,0.1,0,8,0.0,0.0,0.0,0.0,0.0,100.83,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:02:36,1758259955
-1758259960,Nitro,5.41,0.0,0.02,0,8,0.0,0.0,0.0,0.0,0.0,105.82,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:02:41,1758259960
-1758259965,Nitro,4.18,0.0,0.14,0,8,0.0,0.0,0.0,0.0,0.0,110.85,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:02:46,1758259965
-1758259970,Nitro,2.62,0.0,1.41,0,8,0.0,0.0,0.0,0.0,0.0,115.81,project2 - google chrome,0,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 11:02:51,1758259970
-1758259975,Nitro,2.0,0.0,0.09,0,8,0.0,0.0,0.0,0.0,0.0,120.81,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:02:56,1758259975
-1758259980,Nitro,3.59,0.0,0.2,0,8,0.0,0.0,0.0,0.0,0.0,125.82,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:03:01,1758259980
-1758259985,Nitro,2.8,0.0,0.19,0,8,0.0,0.0,0.0,0.0,0.0,130.83,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:03:06,1758259985
-1758259990,Nitro,5.59,0.0,0.11,0,8,0.0,0.0,0.0,0.0,0.0,135.83,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:03:11,1758259990
-1758259995,Nitro,4.22,0.0,1.09,0,8,0.0,0.0,0.0,0.0,0.0,140.82,project2 - google chrome,0,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 11:03:16,1758259995
-1758259997,Nitro,1.46,0.0,0.22,0,8,0.0,0.0,0.0,0.0,0.0,142.87,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:03:18,1758259997
-1758260000,Nitro,4.76,0.0,0.7,0,8,0.0,0.0,0.0,0.0,0.0,145.81,project2 - google chrome,0,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 11:03:21,1758260000
-1758260058,Nitro,53.0,0.0,42.76,0,8,0.0,0.0,0.0,0.0,0.0,203.98,project2 - google chrome,0,28.89,1,Analyst,Business,❌ Not Productive,2025-09-19 11:04:18,1758260057
-1758260058,Nitro,0.93,0.0,42.76,0,8,0.0,0.0,0.0,0.0,0.0,202.98,project2 - google chrome,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 11:04:18,1758260057
-1758260060,Nitro,0.0,0.0,45.58,0,8,0.0,0.0,0.0,0.0,0.0,206.81,project2 - google chrome,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 11:04:21,1758260060
-1758260118,Nitro,2.34,0.15,0.61,0,8,0.0,0.0,0.0,0.0,0.0,263.99,project2 - google chrome,0,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 11:05:18,1758260117
-1758260118,Nitro,0.0,0.0,0.65,0,8,0.0,0.0,0.0,0.0,0.0,264.99,project2 - google chrome,0,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 11:05:18,1758260117
-1758260120,Nitro,5.72,0.0,0.01,0,8,0.0,0.0,0.0,0.0,0.0,267.79,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:05:21,1758260120
-1758260178,Nitro,0.49,0.0,50.88,0,8,0.0,0.0,0.0,0.0,0.0,324.92,project2 - google chrome,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 11:06:18,1758260177
-1758260178,Nitro,0.0,0.0,50.89,0,8,0.0,0.0,0.0,0.0,0.0,325.92,project2 - google chrome,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 11:06:18,1758260177
-1758260180,Nitro,3.17,0.0,0.12,0,8,0.0,0.0,0.0,0.0,0.0,328.76,project2 - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:06:21,1758260180
-1758260238,Nitro,1.87,0.43,0.29,1,9,57.09,0.0,0.0,0.0,0.0,328.76,app.py - productivity_role_predictor - visual studio code,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 11:07:18,1758260237
-1758260238,Nitro,0.0,0.0,0.29,0,9,58.09,0.0,0.0,0.0,0.0,328.76,app.py - productivity_role_predictor - visual studio code,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 11:07:18,1758260237
-1758260240,Nitro,0.0,3.97,0.01,0,9,60.97,0.0,0.0,0.0,0.0,328.76,app.py - productivity_role_predictor - visual studio code,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 11:07:20,1758260240
-1758260298,Nitro,0.33,0.86,0.08,0,9,118.19,0.0,0.0,0.0,0.0,328.76,app.py - productivity_role_predictor - visual studio code,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 11:08:18,1758260297
-1758260298,Nitro,1.0,1.0,0.04,0,9,119.19,0.0,0.0,0.0,0.0,328.76,app.py - productivity_role_predictor - visual studio code,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 11:08:18,1758260297
-1758260300,Nitro,3.08,2.18,0.19,1,10,119.19,0.0,0.0,0.0,0.0,331.35,project2 - google chrome,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 11:08:21,1758260300
-1758260358,Nitro,1.47,0.52,0.1,0,10,119.19,0.0,0.0,0.0,0.0,388.51,project2 - google chrome,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 11:09:18,1758260357
-1758260358,Nitro,0.0,0.0,0.14,0,10,119.19,0.0,0.0,0.0,0.0,389.51,project2 - google chrome,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 11:09:18,1758260357
-1758260360,Nitro,5.97,0.0,0.09,0,10,119.19,0.0,0.0,0.0,0.0,392.36,project2 - google chrome,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 11:09:21,1758260360
-1758260418,Nitro,4.01,0.0,4.2,0,10,119.19,0.0,0.0,0.0,0.0,449.49,project2 - google chrome,0,24.67,1,Analyst,Business,❌ Not Productive,2025-09-19 11:10:18,1758260417
-1758260418,Nitro,0.0,0.0,4.26,0,10,119.19,0.0,0.0,0.0,0.0,450.49,project2 - google chrome,0,24.67,1,Analyst,Business,❌ Not Productive,2025-09-19 11:10:18,1758260417
-1758260420,Nitro,0.0,0.0,7.01,0,10,119.19,0.0,0.0,0.0,0.0,453.24,project2 - google chrome,0,24.48,1,Analyst,Business,❌ Not Productive,2025-09-19 11:10:21,1758260420
-1758260569,Nitro,0.0,0.0,1.35,0,0,0.0,0.0,0.0,0.0,0.0,1.35,streamlit - google chrome,0,25.66,3,Designer,Creative,❌ Not Productive,2025-09-19 11:12:50,1758260568
-1758260571,Nitro,0.0,0.0,3.01,1,1,0.0,0.0,0.0,0.0,0.0,3.01,⚡ productivity & role clustering - google chrome,0,24.01,3,Designer,Creative,❌ Not Productive,2025-09-19 11:12:51,1758260570
-1758260571,Nitro,0.0,0.0,3.06,0,1,0.0,0.0,0.0,0.0,0.0,4.01,⚡ productivity & role clustering - google chrome,0,24.02,3,Designer,Creative,❌ Not Productive,2025-09-19 11:12:51,1758260570
-1758260580,Nitro,0.0,0.0,0.12,0,2,0.0,0.0,0.0,0.0,0.0,15.14,streamlit - google chrome,0,25.46,3,Designer,Creative,❌ Not Productive,2025-09-19 11:13:00,1758260580
-1758260580,Nitro,0.0,0.0,0.12,0,2,0.0,0.0,0.0,0.0,0.0,14.14,streamlit - google chrome,0,25.51,3,Designer,Creative,❌ Not Productive,2025-09-19 11:13:00,1758260580
-1758260580,Nitro,5.59,5.74,0.02,1,2,0.0,0.0,0.0,0.0,0.0,13.14,streamlit - google chrome,0,25.54,3,Designer,Creative,❌ Not Productive,2025-09-19 11:13:00,1758260580
-1758260582,Nitro,4.3,0.0,0.9,1,3,0.0,0.0,0.0,0.0,0.0,16.54,⚡ productivity & role clustering - google chrome,0,25.28,3,Designer,Creative,❌ Not Productive,2025-09-19 11:13:02,1758260581
-1758260582,Nitro,0.0,0.0,0.93,0,3,0.0,0.0,0.0,0.0,0.0,17.54,⚡ productivity & role clustering - google chrome,0,25.28,3,Designer,Creative,❌ Not Productive,2025-09-19 11:13:02,1758260581
-1758260585,Nitro,0.0,4.36,0.79,0,3,0.0,0.0,0.0,0.0,0.0,20.83,⚡ productivity & role clustering - google chrome,0,25.25,3,Designer,Creative,❌ Not Productive,2025-09-19 11:13:05,1758260585
-1758260586,Nitro,0.0,0.32,0.19,0,3,0.0,0.0,0.0,0.0,0.0,21.83,⚡ productivity & role clustering - google chrome,0,25.44,3,Designer,Creative,❌ Not Productive,2025-09-19 11:13:06,1758260585
-1758260586,Nitro,0.0,0.0,0.19,0,3,0.0,0.0,0.0,0.0,0.0,22.83,⚡ productivity & role clustering - google chrome,0,25.44,3,Designer,Creative,❌ Not Productive,2025-09-19 11:13:06,1758260585
-1758260590,Nitro,5.95,0.0,0.08,0,3,0.0,0.0,0.0,0.0,0.0,27.03,⚡ productivity & role clustering - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:13:10,1758260590
-1758260591,Nitro,4.0,0.0,0.12,0,3,0.0,0.0,0.0,0.0,0.0,28.03,⚡ productivity & role clustering - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:13:11,1758260590
-1758260591,Nitro,0.0,0.0,0.13,0,3,0.0,0.0,0.0,0.0,0.0,29.03,⚡ productivity & role clustering - google chrome,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 11:13:11,1758260590
-1758260597,Nitro,4.94,4.84,0.05,1,4,6.08,0.0,0.0,0.0,0.0,29.03,app.py - productivity_role_predictor - visual studio code,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-19 11:13:17,1758260596
-1758260597,Nitro,0.0,0.0,0.11,0,4,7.08,0.0,0.0,0.0,0.0,29.03,app.py - productivity_role_predictor - visual studio code,0,25.74,3,Designer,Creative,❌ Not Productive,2025-09-19 11:13:17,1758260596
-1758260597,Nitro,0.0,0.0,0.12,0,4,8.08,0.0,0.0,0.0,0.0,29.03,app.py - productivity_role_predictor - visual studio code,0,26.16,3,Designer,Creative,❌ Not Productive,2025-09-19 11:13:17,1758260596
-1758260601,Nitro,0.25,0.18,2.05,1,5,8.08,0.0,0.0,0.0,0.0,32.95,⚡ productivity & role clustering - google chrome,0,25.16,1,Analyst,Business,❌ Not Productive,2025-09-19 11:13:21,1758260601
-1758260605,Nitro,0.0,0.58,2.92,0,5,8.08,0.0,0.0,0.0,0.0,37.03,⚡ productivity & role clustering - google chrome,0,24.12,1,Analyst,Business,❌ Not Productive,2025-09-19 11:13:25,1758260605
-1758260610,Nitro,0.0,0.0,7.93,0,5,8.08,0.0,0.0,0.0,0.0,42.04,⚡ productivity & role clustering - google chrome,0,23.58,1,Analyst,Business,❌ Not Productive,2025-09-19 11:13:30,1758260610
-1758260615,Nitro,0.0,0.0,12.93,0,5,8.08,0.0,0.0,0.0,0.0,47.04,⚡ productivity & role clustering - google chrome,0,22.92,1,Analyst,Business,❌ Not Productive,2025-09-19 11:13:35,1758260615
-1758260620,Nitro,0.0,2.54,0.05,1,6,8.08,0.0,0.0,0.0,0.0,47.04,warning: this site can see edits you make,0,26.16,1,Analyst,Business,❌ Not Productive,2025-09-19 11:13:40,1758260620
-1758260625,Nitro,0.36,3.94,0.0,1,7,13.65,0.0,0.0,0.0,0.0,47.04,app.py - productivity_role_predictor - visual studio code,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:13:45,1758260625
-1758260630,Nitro,0.6,6.03,0.18,1,8,13.65,0.0,0.0,0.0,0.0,52.03,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:13:50,1758260630
-1758260635,Nitro,3.56,0.0,0.12,0,8,13.65,0.0,0.0,0.0,0.0,57.09,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:13:56,1758260635
-1758260640,Nitro,0.4,1.33,0.88,0,8,13.65,0.0,0.0,0.0,0.0,62.07,project2 - google chrome,0,26.26,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:00,1758260640
-1758260645,Nitro,0.0,5.92,0.25,0,8,13.65,0.0,0.0,0.0,0.0,67.1,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:06,1758260645
-1758260650,Nitro,4.8,0.0,0.08,0,8,13.65,0.0,0.0,0.0,0.0,72.09,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:11,1758260650
-1758260655,Nitro,4.79,0.0,0.1,0,8,13.65,0.0,0.0,0.0,0.0,77.11,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:16,1758260655
-1758260658,Nitro,2.79,0.0,0.01,0,8,13.65,0.0,0.0,0.0,0.0,79.26,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:18,1758260657
-1758260658,Nitro,0.0,0.0,0.01,0,8,13.65,0.0,0.0,0.0,0.0,80.26,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:18,1758260657
-1758260661,Nitro,0.0,0.0,0.18,0,8,13.65,0.0,0.0,0.0,0.0,84.35,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:21,1758260660
-1758260661,Nitro,5.5,0.0,0.17,0,8,13.65,0.0,0.0,0.0,0.0,83.35,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:21,1758260660
-1758260661,Nitro,0.0,0.0,0.19,0,8,13.65,0.0,0.0,0.0,0.0,85.35,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:21,1758260660
-1758260665,Nitro,5.07,0.0,0.47,0,8,13.65,0.0,0.0,0.0,0.0,90.08,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:26,1758260665
-1758260670,Nitro,3.81,0.0,0.18,0,8,13.65,0.0,0.0,0.0,0.0,95.07,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:31,1758260670
-1758260675,Nitro,3.38,0.0,0.41,0,8,13.65,0.0,0.0,0.0,0.0,100.09,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:36,1758260675
-1758260680,Nitro,2.21,0.0,0.24,0,8,13.65,0.0,0.0,0.0,0.0,105.06,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:41,1758260680
-1758260685,Nitro,2.78,0.0,0.04,0,8,13.65,0.0,0.0,0.0,0.0,110.09,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:14:46,1758260685
-1758260707,Nitro,3.74,0.66,0.2,1,9,13.65,0.0,0.0,0.0,0.0,132.01,⚡ productivity & role clustering - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:08,1758260707
-1758260710,Nitro,0.0,2.51,0.89,0,9,13.65,0.0,0.0,0.0,0.0,134.57,⚡ productivity & role clustering - google chrome,0,26.26,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:10,1758260710
-1758260715,Nitro,0.0,0.0,5.83,0,9,13.65,0.0,0.0,0.0,0.0,139.5,⚡ productivity & role clustering - google chrome,0,24.1,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:15,1758260715
-1758260718,Nitro,0.0,0.0,0.05,0,9,13.65,0.0,0.0,0.0,0.0,143.23,⚡ productivity & role clustering - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:18,1758260717
-1758260718,Nitro,0.0,9.07,0.05,0,9,13.65,0.0,0.0,0.0,0.0,142.23,⚡ productivity & role clustering - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:18,1758260717
-1758260721,Nitro,1.0,4.73,0.3,1,10,13.65,0.0,0.0,0.0,0.0,146.24,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:21,1758260720
-1758260721,Nitro,1.0,0.0,0.01,0,10,13.65,0.0,0.0,0.0,0.0,147.24,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:21,1758260720
-1758260721,Nitro,0.0,0.0,0.07,0,10,13.65,0.0,0.0,0.0,0.0,148.24,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:21,1758260720
-1758260725,Nitro,3.43,0.0,0.71,0,10,13.65,0.0,0.0,0.0,0.0,152.91,project2 - google chrome,0,26.26,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:26,1758260725
-1758260730,Nitro,4.39,0.0,0.13,0,10,13.65,0.0,0.0,0.0,0.0,157.92,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:31,1758260730
-1758260735,Nitro,1.59,6.35,0.25,1,11,13.65,0.0,0.0,0.0,0.0,162.33,⚡ productivity & role clustering - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:35,1758260735
-1758260740,Nitro,0.0,3.55,1.05,1,12,13.65,0.0,0.0,0.0,0.0,167.89,project2 - google chrome,0,26.26,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:41,1758260740
-1758260745,Nitro,0.23,7.47,0.11,1,13,13.65,0.0,0.0,0.0,0.0,172.33,⚡ productivity & role clustering - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:45,1758260745
-1758260750,Nitro,2.33,4.54,0.19,1,14,13.65,0.0,0.0,0.0,0.0,177.9,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:51,1758260750
-1758260755,Nitro,4.23,0.0,0.16,0,14,13.65,0.0,0.0,0.0,0.0,182.87,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:15:56,1758260755
-1758260760,Nitro,4.37,0.0,0.02,0,14,13.65,0.0,0.0,0.0,0.0,187.9,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:16:01,1758260760
-1758260765,Nitro,4.2,0.0,0.13,0,14,13.65,0.0,0.0,0.0,0.0,192.9,project2 - google chrome,0,26.45,1,Analyst,Business,❌ Not Productive,2025-09-19 11:16:06,1758260765
-1758260770,Nitro,1.2,1.01,0.03,1,15,18.64,0.0,0.0,0.0,0.0,192.9,app.py - productivity_role_predictor - visual studio code,0,26.61,1,Analyst,Business,❌ Not Productive,2025-09-19 11:16:11,1758260770
+session_id,device_id,typing_intensity,mouse_intensity,idle_duration,task_switch_delta,task_switch_total,time_coding,time_browsing,time_other,time_coding_str,time_browsing_str,time_other_str,active_window_title,task_switching_frequency,time_email,time_meetings,time_socialmedia,time_docs,PredictedProductivity,ClusterID,RoleName,RoleGroup,ProductivityStatus,Timestamp,SessionID
+1758272177,Nitro,0.27,0.44,3.88,0,7,0.0,195.81,0,0s,3m 15s,0s,project2 - google chrome,0,0,0,0,0,23.5,1,Analyst,Business,❌ Not Productive,2025-09-19 14:26:17,1758272177
+1758272191,Nitro,0.0,0.0,1.06,0,0,0.0,1.06,0,0s,1s,0s,streamlit - google chrome,0,0,0,0,0,25.66,3,Designer,Creative,❌ Not Productive,2025-09-19 14:26:31,1758272190
+1758272197,Nitro,0.0,0.61,0.04,1,1,0.0,6.69,0,0s,6s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.79,3,Designer,Creative,❌ Not Productive,2025-09-19 14:26:37,1758272196
+1758272202,Nitro,0.0,1.02,1.03,0,1,0.0,11.72,0,0s,11s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.4,3,Designer,Creative,❌ Not Productive,2025-09-19 14:26:42,1758272201
+1758272207,Nitro,2.81,0.0,0.07,0,1,0.0,16.7,0,0s,16s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.46,3,Designer,Creative,❌ Not Productive,2025-09-19 14:26:47,1758272206
+1758272212,Nitro,11.78,0.0,0.1,0,1,0.0,21.71,0,0s,21s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,3,Designer,Creative,❌ Not Productive,2025-09-19 14:26:52,1758272211
+1758272217,Nitro,6.6,25.29,0.0,0,1,0.0,26.72,0,0s,26s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.04,1,Analyst,Business,❌ Not Productive,2025-09-19 14:26:57,1758272216
+1758272222,Nitro,6.38,2.22,0.13,0,1,0.0,31.73,0,0s,31s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:27:02,1758272221
+1758272227,Nitro,3.63,0.0,0.0,0,1,0.0,36.69,0,0s,36s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:27:07,1758272226
+1758272232,Nitro,1.39,0.85,0.09,1,2,5.77,36.69,0,5s,36s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-19 14:27:12,1758272232
+1758272236,Nitro,9.55,0.0,0.5,1,3,5.77,40.88,0,5s,40s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-19 14:27:17,1758272236
+1758272242,Nitro,0.0,0.51,3.08,0,3,5.77,45.97,0,5s,45s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,23.88,1,Analyst,Business,❌ Not Productive,2025-09-19 14:27:22,1758272241
+1758272247,Nitro,0.0,0.83,1.86,0,3,5.77,50.91,0,5s,50s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.09,1,Analyst,Business,❌ Not Productive,2025-09-19 14:27:27,1758272246
+1758272252,Nitro,0.34,1.0,4.14,1,4,11.58,50.91,0,11s,50s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,23.82,1,Analyst,Business,❌ Not Productive,2025-09-19 14:27:32,1758272252
+1758272257,Nitro,0.0,1.18,3.01,0,4,16.53,50.91,0,16s,50s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,24.37,1,Analyst,Business,❌ Not Productive,2025-09-19 14:27:37,1758272257
+1758272262,Nitro,0.0,0.0,8.0,0,4,21.51,50.91,0,21s,50s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,24.41,1,Analyst,Business,❌ Not Productive,2025-09-19 14:27:42,1758272262
+1758272267,Nitro,0.0,0.07,1.01,0,4,26.51,50.91,0,26s,50s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,26.77,0,Developer,Technical,❌ Not Productive,2025-09-19 14:27:47,1758272267
+1758272272,Nitro,0.0,0.0,6.01,0,4,31.51,50.91,0,31s,50s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,24.64,0,Developer,Technical,❌ Not Productive,2025-09-19 14:27:52,1758272272
+1758272277,Nitro,0.0,0.76,0.99,0,4,36.54,50.91,0,36s,50s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,26.77,0,Developer,Technical,❌ Not Productive,2025-09-19 14:27:57,1758272277
+1758272282,Nitro,0.0,0.0,5.94,0,4,41.49,50.91,0,41s,50s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,24.64,0,Developer,Technical,❌ Not Productive,2025-09-19 14:28:02,1758272282
+1758272287,Nitro,0.0,0.0,10.98,0,4,46.53,50.91,0,46s,50s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,24.38,0,Developer,Technical,❌ Not Productive,2025-09-19 14:28:07,1758272287
+1758272292,Nitro,0.0,0.0,15.98,0,4,51.53,50.91,0,51s,50s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,23.79,0,Developer,Technical,❌ Not Productive,2025-09-19 14:28:12,1758272292
+1758272297,Nitro,0.0,0.33,1.93,0,4,56.51,50.91,0,56s,50s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,26.3,0,Developer,Technical,❌ Not Productive,2025-09-19 14:28:17,1758272297
+1758272302,Nitro,1.0,0.0,0.93,0,4,61.5,50.91,0,1m 1s,50s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,26.77,0,Developer,Technical,❌ Not Productive,2025-09-19 14:28:22,1758272302
+1758272307,Nitro,0.0,2.03,3.09,0,4,66.49,50.91,0,1m 6s,50s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,24.7,0,Developer,Technical,❌ Not Productive,2025-09-19 14:28:27,1758272307
+1758272326,Nitro,1.71,0.22,0.4,1,5,66.49,70.17,0,1m 6s,1m 10s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,26.96,0,Developer,Technical,❌ Not Productive,2025-09-19 14:28:47,1758272326
+1758272332,Nitro,5.93,0.71,0.25,0,5,66.49,75.23,0,1m 6s,1m 15s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,26.96,0,Developer,Technical,❌ Not Productive,2025-09-19 14:28:52,1758272331
+1758272337,Nitro,5.76,1.39,0.05,0,5,66.49,80.26,0,1m 6s,1m 20s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,26.96,0,Developer,Technical,❌ Not Productive,2025-09-19 14:28:57,1758272336
+1758272342,Nitro,0.0,2.15,0.81,0,5,66.49,85.19,0,1m 6s,1m 25s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,26.77,0,Developer,Technical,❌ Not Productive,2025-09-19 14:29:02,1758272341
+1758272347,Nitro,0.0,1.76,0.53,0,5,66.49,90.22,0,1m 6s,1m 30s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,26.77,0,Developer,Technical,❌ Not Productive,2025-09-19 14:29:07,1758272346
+1758272352,Nitro,0.0,0.0,5.51,0,5,66.49,95.2,0,1m 6s,1m 35s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,24.64,0,Developer,Technical,❌ Not Productive,2025-09-19 14:29:12,1758272351
+1758272357,Nitro,0.0,0.0,10.5,0,5,66.49,100.19,0,1m 6s,1m 40s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,24.38,0,Developer,Technical,❌ Not Productive,2025-09-19 14:29:17,1758272356
+1758272400,Nitro,0.25,2.65,0.38,0,5,66.49,144.07,0,1m 6s,2m 24s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:30:00,1758272400
+1758272406,Nitro,0.0,1.3,4.76,0,5,66.49,149.8,0,1m 6s,2m 29s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,24.67,1,Analyst,Business,❌ Not Productive,2025-09-19 14:30:06,1758272406
+1758272411,Nitro,0.2,3.72,0.0,1,6,66.49,149.8,0,1m 6s,2m 29s,0s,snipping tool overlay,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:30:11,1758272411
+1758272416,Nitro,1.9,8.68,0.17,1,7,66.49,155.05,0,1m 6s,2m 35s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:30:16,1758272416
+1758272421,Nitro,2.4,0.0,0.14,0,7,66.49,160.05,0,1m 6s,2m 40s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:30:21,1758272421
+1758272426,Nitro,4.81,0.02,0.07,0,7,66.49,165.04,0,1m 6s,2m 45s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:30:26,1758272426
+1758272431,Nitro,1.67,5.07,1.14,1,8,66.49,169.83,0,1m 6s,2m 49s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,26.77,1,Analyst,Business,❌ Not Productive,2025-09-19 14:30:31,1758272431
+1758272436,Nitro,2.89,4.14,0.13,1,9,66.49,175.02,0,1m 6s,2m 55s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:30:36,1758272436
+1758272441,Nitro,0.84,4.86,0.73,1,10,66.49,179.79,0,1m 6s,2m 59s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,26.77,1,Analyst,Business,❌ Not Productive,2025-09-19 14:30:41,1758272441
+1758272446,Nitro,2.48,2.28,0.1,1,11,66.49,185.03,0,1m 6s,3m 5s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:30:46,1758272446
+1758272451,Nitro,1.67,4.06,1.21,1,12,66.49,189.81,0,1m 6s,3m 9s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,26.77,1,Analyst,Business,❌ Not Productive,2025-09-19 14:30:51,1758272451
+1758272456,Nitro,2.3,2.62,0.03,1,13,66.49,195.04,0,1m 6s,3m 15s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:30:56,1758272456
+1758272461,Nitro,2.21,0.0,0.22,0,13,66.49,200.03,0,1m 6s,3m 20s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:31:01,1758272461
+1758272466,Nitro,3.58,0.0,0.07,0,13,66.49,205.06,0,1m 6s,3m 25s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:31:06,1758272466
+1758272471,Nitro,5.23,0.0,0.44,0,13,66.49,210.03,0,1m 6s,3m 30s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:31:11,1758272471
+1758272476,Nitro,1.38,2.86,0.09,1,14,66.49,215.09,0,1m 6s,3m 35s,0s,streamlit - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:31:16,1758272476
+1758272481,Nitro,0.0,8.89,0.45,1,15,66.49,220.02,0,1m 6s,3m 40s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:31:21,1758272481
+1758272486,Nitro,4.99,0.0,0.15,0,15,66.49,225.03,0,1m 6s,3m 45s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:31:26,1758272486
+1758272491,Nitro,3.6,0.0,0.06,0,15,66.49,230.03,0,1m 6s,3m 50s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:31:31,1758272491
+1758272496,Nitro,0.79,7.62,0.01,1,16,66.49,235.1,0,1m 6s,3m 55s,0s,tkmce.ac.in/syllabus - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:31:36,1758272496
+1758272501,Nitro,4.04,2.29,0.05,1,17,66.49,240.04,0,1m 6s,4m 0s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:31:41,1758272501
+1758272506,Nitro,1.2,0.0,0.16,0,17,66.49,245.03,0,1m 6s,4m 5s,0s,project2 - google chrome,0,0,0,0,0,26.96,1,Analyst,Business,❌ Not Productive,2025-09-19 14:31:46,1758272506
+20250919,Nitro-55efb254,0.0,0.0,1.85,0,0,0.0,1.85,0,0s,1s,0s,streamlit - google chrome,0,0,0,0,0,25.18,3,Designer,Creative,❌ Not Productive,2025-09-19 14:51:16,1758273674
+20250919,Nitro-55efb254,0.0,2.38,0.0,1,1,0.0,9.74,0,0s,9s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.69,3,Designer,Creative,❌ Not Productive,2025-09-19 14:51:24,1758273683
+20250919,Nitro-55efb254,2.82,0.01,0.05,0,1,0.0,14.7,0,0s,14s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.51,3,Designer,Creative,❌ Not Productive,2025-09-19 14:51:29,1758273688
+20250919,Nitro-55efb254,11.57,0.0,0.12,0,1,0.0,19.71,0,0s,19s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,3,Designer,Creative,❌ Not Productive,2025-09-19 14:51:34,1758273693
+20250919,Nitro-55efb254,3.6,0.0,1.87,0,1,0.0,24.71,0,0s,24s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,24.79,1,Analyst,Business,❌ Not Productive,2025-09-19 14:51:39,1758273698
+20250919,Nitro-55efb254,0.0,3.5,0.01,0,1,0.0,29.67,0,0s,29s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:51:44,1758273703
+20250919,Nitro-55efb254,1.47,1.86,0.29,0,1,0.0,35.09,0,0s,35s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:51:49,1758273709
+20250919,Nitro-55efb254,0.87,0.0,3.93,0,1,0.0,39.68,0,0s,39s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,23.5,1,Analyst,Business,❌ Not Productive,2025-09-19 14:51:54,1758273713
+20250919,Nitro-55efb254,1.4,0.32,0.3,0,1,0.0,44.68,0,0s,44s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:51:59,1758273718
+20250919,Nitro-55efb254,3.39,0.0,0.03,0,1,0.0,49.7,0,0s,49s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:52:04,1758273723
+20250919,Nitro-55efb254,4.62,1.4,0.03,0,1,0.0,54.67,0,0s,54s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:52:09,1758273728
+20250919,Nitro-55efb254,6.34,0.0,0.2,0,1,0.0,59.72,0,0s,59s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:52:14,1758273733
+20250919,Nitro-55efb254,9.65,0.46,0.02,0,1,0.0,64.69,0,0s,1m 4s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:52:19,1758273738
+20250919,Nitro-55efb254,1.41,0.48,0.37,0,1,0.0,69.66,0,0s,1m 9s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:52:24,1758273743
+20250919,Nitro-55efb254,0.0,1.77,1.27,0,1,0.0,74.68,0,0s,1m 14s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 14:52:29,1758273748
+20250919,Nitro-55efb254,0.0,3.2,0.29,0,1,0.0,103.64,0,0s,1m 43s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:52:58,1758273777
+20250919,Nitro-55efb254,0.18,6.94,0.09,1,2,0.0,103.64,0,0s,1m 43s,0s,snipping tool overlay,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:53:03,1758273783
+20250919,Nitro-55efb254,0.0,8.26,0.05,1,3,0.0,108.81,0,0s,1m 48s,0s,project2 - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:53:08,1758273788
+20250919,Nitro-55efb254,3.01,0.0,0.43,0,3,0.0,113.8,0,0s,1m 53s,0s,project2 - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:53:13,1758273793
+20250919,Nitro-55efb254,4.59,0.0,0.06,0,3,0.0,118.82,0,0s,1m 58s,0s,project2 - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:53:18,1758273798
+20250919,Nitro-55efb254,3.02,0.0,2.0,0,3,0.0,123.79,0,0s,2m 3s,0s,project2 - google chrome,0,0,0,0,0,24.79,1,Analyst,Business,❌ Not Productive,2025-09-19 14:53:23,1758273803
+20250919,Nitro-55efb254,2.59,0.0,0.11,0,3,0.0,128.81,0,0s,2m 8s,0s,project2 - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:53:28,1758273808
+20250919,Nitro-55efb254,2.0,0.0,1.0,0,3,0.0,133.81,0,0s,2m 13s,0s,project2 - google chrome,0,0,0,0,0,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 14:53:33,1758273813
+20250919,Nitro-55efb254,2.0,0.0,1.07,0,3,0.0,138.81,0,0s,2m 18s,0s,project2 - google chrome,0,0,0,0,0,25.25,1,Analyst,Business,❌ Not Productive,2025-09-19 14:53:38,1758273818
+20250919,Nitro-55efb254,0.0,0.0,6.06,0,3,0.0,143.8,0,0s,2m 23s,0s,project2 - google chrome,0,0,0,0,0,23.48,1,Analyst,Business,❌ Not Productive,2025-09-19 14:53:43,1758273823
+20250919,Nitro-55efb254,0.0,0.0,11.08,0,3,0.0,148.82,0,0s,2m 28s,0s,project2 - google chrome,0,0,0,0,0,22.91,1,Analyst,Business,❌ Not Productive,2025-09-19 14:53:48,1758273828
+20250919,Nitro-55efb254,0.0,0.0,16.07,0,3,0.0,153.8,0,0s,2m 33s,0s,project2 - google chrome,0,0,0,0,0,21.92,1,Analyst,Business,❌ Not Productive,2025-09-19 14:53:53,1758273833
+20250919,Nitro-55efb254,0.0,0.0,21.08,0,3,0.0,158.82,0,0s,2m 38s,0s,project2 - google chrome,0,0,0,0,0,15.52,1,Analyst,Business,❌ Not Productive,2025-09-19 14:53:58,1758273838
+20250919,Nitro-55efb254,0.0,0.0,26.07,0,3,0.0,163.81,0,0s,2m 43s,0s,project2 - google chrome,0,0,0,0,0,10.97,1,Analyst,Business,❌ Not Productive,2025-09-19 14:54:03,1758273843
+20250919,Nitro-55efb254,0.0,0.0,40.11,0,3,0.0,177.85,0,0s,2m 57s,0s,project2 - google chrome,0,0,0,0,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 14:54:17,1758273857
+20250919,Nitro-55efb254,0.0,0.0,41.08,0,3,0.0,178.85,0,0s,2m 58s,0s,project2 - google chrome,0,0,0,0,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 14:54:18,1758273858
+20250919,Nitro-55efb254,0.14,0.0,0.13,0,3,0.0,237.89,0,0s,3m 57s,0s,project2 - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:55:17,1758273917
+20250919,Nitro-55efb254,6.0,0.0,0.04,0,3,0.0,238.89,0,0s,3m 58s,0s,project2 - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:55:18,1758273918
+20250919,Nitro-55efb254,3.29,0.39,0.13,1,4,0.0,278.44,0,0s,4m 38s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:55:58,1758273958
+20250919,Nitro-55efb254,0.0,2.39,0.0,0,4,0.0,279.44,0,0s,4m 39s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:55:58,1758273958
+20250919,Nitro-55efb254,3.28,4.14,0.01,1,5,0.0,284.62,0,0s,4m 44s,0s,project2 - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:56:03,1758273963
+20250919,Nitro-55efb254,4.6,0.0,0.13,0,5,0.0,289.62,0,0s,4m 49s,0s,project2 - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:56:08,1758273968
+20250919,Nitro-55efb254,4.21,0.0,0.05,0,5,0.0,294.61,0,0s,4m 54s,0s,project2 - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:56:13,1758273973
+20250919,Nitro-55efb254,3.99,0.0,0.29,0,5,0.0,299.62,0,0s,4m 59s,0s,project2 - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:56:18,1758273978
+20250919,Nitro-55efb254,5.22,0.0,0.04,0,5,0.0,304.6,0,0s,5m 4s,0s,project2 - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:56:23,1758273983
+20250919,Nitro-55efb254,1.39,0.0,3.07,0,5,0.0,309.63,0,0s,5m 9s,0s,project2 - google chrome,0,0,0,0,0,23.56,1,Analyst,Business,❌ Not Productive,2025-09-19 14:56:28,1758273988
+20250919,Nitro-55efb254,0.0,0.0,8.07,0,5,0.0,314.62,0,0s,5m 14s,0s,project2 - google chrome,0,0,0,0,0,23.25,1,Analyst,Business,❌ Not Productive,2025-09-19 14:56:33,1758273993
+20250919,Nitro-55efb254,0.0,0.0,13.06,0,5,0.0,319.61,0,0s,5m 19s,0s,project2 - google chrome,0,0,0,0,0,22.45,1,Analyst,Business,❌ Not Productive,2025-09-19 14:56:38,1758273998
+20250919,Nitro-55efb254,0.0,0.0,18.08,0,5,0.0,324.63,0,0s,5m 24s,0s,project2 - google chrome,0,0,0,0,0,21.61,1,Analyst,Business,❌ Not Productive,2025-09-19 14:56:43,1758274003
+20250919,Nitro-55efb254,0.0,0.0,23.07,0,5,0.0,329.62,0,0s,5m 29s,0s,project2 - google chrome,0,0,0,0,0,11.05,1,Analyst,Business,❌ Not Productive,2025-09-19 14:56:48,1758274008
+20250919,Nitro-55efb254,0.0,0.0,28.08,0,5,0.0,334.63,0,0s,5m 34s,0s,project2 - google chrome,0,0,0,0,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 14:56:53,1758274013
+20250919,Nitro-55efb254,0.0,0.0,33.06,0,5,0.0,339.61,0,0s,5m 39s,0s,project2 - google chrome,0,0,0,0,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 14:56:58,1758274018
+20250919,Nitro-55efb254,0.0,0.13,11.78,0,5,0.0,358.65,0,0s,5m 58s,0s,project2 - google chrome,0,0,0,0,0,22.48,1,Analyst,Business,❌ Not Productive,2025-09-19 14:57:17,1758274037
+20250919,Nitro-55efb254,0.0,0.0,12.75,0,5,0.0,359.65,0,0s,5m 59s,0s,project2 - google chrome,0,0,0,0,0,22.46,1,Analyst,Business,❌ Not Productive,2025-09-19 14:57:18,1758274038
+20250919,Nitro-55efb254,0.0,0.12,20.62,0,5,0.0,418.7,0,0s,6m 58s,0s,project2 - google chrome,0,0,0,0,0,19.12,1,Analyst,Business,❌ Not Productive,2025-09-19 14:58:17,1758274097
+20250919,Nitro-55efb254,0.0,0.0,21.59,0,5,0.0,419.7,0,0s,6m 59s,0s,project2 - google chrome,0,0,0,0,0,15.52,1,Analyst,Business,❌ Not Productive,2025-09-19 14:58:18,1758274098
+20250919,Nitro-55efb254,1.0,0.29,0.18,0,5,0.0,478.74,0,0s,7m 58s,0s,project2 - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:59:17,1758274157
+20250919,Nitro-55efb254,6.0,0.0,0.22,0,5,0.0,479.74,0,0s,7m 59s,0s,project2 - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 14:59:18,1758274158
+20250919,Nitro-55efb254,1.05,0.0,41.52,0,5,0.0,538.75,0,0s,8m 58s,0s,project2 - google chrome,0,0,0,0,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 15:00:17,1758274217
+20250919,Nitro-55efb254,0.0,0.0,42.5,0,5,0.0,539.75,0,0s,8m 59s,0s,project2 - google chrome,0,0,0,0,0,10.23,1,Analyst,Business,❌ Not Productive,2025-09-19 15:00:18,1758274218
+20250919,Nitro-55efb254,0.56,0.78,0.22,1,6,0.0,539.75,0,0s,8m 59s,0s,task switching,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 15:01:17,1758274277
+20250919,Nitro-55efb254,1.0,0.0,0.31,1,7,1.0,539.75,0,1s,8m 59s,0s,collect_realtime_data.py - productivity_role_predictor - visual studio code,0,0,0,0,0,25.43,1,Analyst,Business,❌ Not Productive,2025-09-19 15:01:18,1758274278
+20250919,Nitro-55efb254,0.0,0.0,1.54,0,0,0.0,1.54,0.0,0s,1s,0s,streamlit - google chrome,0,0,0,0,0,25.18,3,Designer,Creative,❌ Not Productive,2025-09-19 15:10:17,1758274816
+20250919,Nitro-55efb254,0.0,1.94,0.12,1,1,0.0,7.09,0.0,0s,7s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.71,3,Designer,Creative,❌ Not Productive,2025-09-19 15:10:23,1758274823
+20250919,Nitro-55efb254,0.0,7.74,1.18,0,1,0.0,12.1,0.0,0s,12s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.4,3,Designer,Creative,❌ Not Productive,2025-09-19 15:10:28,1758274828
+20250919,Nitro-55efb254,0.0,2.99,0.29,0,1,0.0,17.08,0.0,0s,17s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.46,3,Designer,Creative,❌ Not Productive,2025-09-19 15:10:33,1758274833
+20250919,Nitro-55efb254,0.0,4.34,0.05,0,1,0.0,22.1,0.0,0s,22s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,3,Designer,Creative,❌ Not Productive,2025-09-19 15:10:38,1758274838
+20250919,Nitro-55efb254,0.0,1.33,0.01,0,1,0.0,27.11,0.0,0s,27s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 15:10:43,1758274843
+20250919,Nitro-55efb254,10.66,0.19,0.05,0,1,0.0,32.08,0.0,0s,32s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 15:10:48,1758274848
+20250919,Nitro-55efb254,2.19,1.0,2.41,0,1,0.0,37.1,0.0,0s,37s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,24.62,1,Analyst,Business,❌ Not Productive,2025-09-19 15:10:53,1758274853
+20250919,Nitro-55efb254,2.6,3.58,0.0,0,1,0.0,42.09,0.0,0s,42s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,1,Analyst,Business,❌ Not Productive,2025-09-19 15:10:58,1758274858
+20250920,Nitro-55efb254,0.0,0.0,3.71,0,0,0.0,3.71,0.0,0s,3s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,23.9,3,Designer,Creative,❌ Not Productive,2025-09-20 15:58:04,1758364080
+20250920,Nitro-55efb254,0.0,1.42,1.01,0,0,0.0,9.62,0.0,0s,9s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.51,3,Designer,Creative,❌ Not Productive,2025-09-20 15:58:10,1758364090
+20250920,Nitro-55efb254,4.22,0.0,0.02,0,0,0.0,14.59,0.0,0s,14s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.51,3,Designer,Creative,❌ Not Productive,2025-09-20 15:58:15,1758364095
+20250920,Nitro-55efb254,2.59,0.0,0.22,0,0,0.0,19.62,0.0,0s,19s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.44,3,Designer,Creative,❌ Not Productive,2025-09-20 15:58:20,1758364100
+20250920,Nitro-55efb254,0.0,0.47,3.82,0,0,0.0,24.56,0.0,0s,24s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,23.5,1,Analyst,Business,❌ Not Productive,2025-09-20 15:58:25,1758364105
+20250920,Nitro-55efb254,0.0,0.89,1.56,0,0,0.0,29.57,0.0,0s,29s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,24.79,1,Analyst,Business,❌ Not Productive,2025-09-20 15:58:30,1758364110
+20250920,Nitro-55efb254,0.38,0.0,2.08,1,1,5.32,29.57,0.0,5s,29s,0s,app.py - productivity_role_predictor - visual studio code,0,0,0,0,0,24.93,1,Analyst,Business,❌ Not Productive,2025-09-20 15:58:35,1758364115
+20250920,Nitro-55efb254,2.2,1.64,0.82,1,2,5.32,29.57,0.0,5s,29s,0s,task switching,0,0,0,0,0,25.61,1,Analyst,Business,❌ Not Productive,2025-09-20 15:58:40,1758364120
+20250920,Nitro-55efb254,0.0,0.96,2.83,1,3,5.32,34.28,0.0,5s,34s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,24.03,1,Analyst,Business,❌ Not Productive,2025-09-20 15:58:45,1758364125
+20250920,Nitro-55efb254,0.0,0.4,0.01,0,3,5.32,39.3,0.0,5s,39s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 15:58:50,1758364130
+20250920,Nitro-55efb254,0.0,0.65,2.22,0,3,5.32,44.33,0.0,5s,44s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,24.93,1,Analyst,Business,❌ Not Productive,2025-09-20 15:58:55,1758364135
+20250920,Nitro-55efb254,0.0,0.48,3.56,0,3,5.32,49.31,0.0,5s,49s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,23.8,1,Analyst,Business,❌ Not Productive,2025-09-20 15:59:00,1758364140
+20250920,Nitro-55efb254,0.2,5.79,0.25,1,4,5.32,49.31,0.0,5s,49s,0s,snipping tool overlay,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 15:59:05,1758364145
+20250920,Nitro-55efb254,0.0,3.39,0.36,1,5,5.32,68.85,0.0,5s,1m 8s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 15:59:25,1758364164
+20250920,Nitro-55efb254,2.06,2.33,0.19,0,5,5.32,74.67,0.0,5s,1m 14s,0s,⚡ productivity & role clustering - google chrome,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 15:59:30,1758364170
+20250920,Nitro-55efb254,1.0,5.55,0.19,1,6,5.32,79.65,0.0,5s,1m 19s,0s,project2 - google chrome,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 15:59:35,1758364175
+20250920,Nitro-55efb254,4.99,0.0,0.21,0,6,5.32,79.65,0.0,5s,1m 19s,0s,,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 15:59:40,1758364180
+20250920,Nitro-55efb254,1.2,8.57,0.05,0,6,5.32,84.64,0.0,5s,1m 24s,0s,project2 - google chrome,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 15:59:45,1758364185
+20250920,Nitro-55efb254,5.18,0.0,0.09,0,6,5.32,89.66,0.0,5s,1m 29s,0s,project2 - google chrome,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 15:59:50,1758364190
+20250920,Nitro-55efb254,0.79,2.2,0.0,0,6,5.32,94.71,0.0,5s,1m 34s,0s,project2 - google chrome,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 15:59:56,1758364195
+20250920,Nitro-55efb254,0.0,4.6,0.87,1,7,5.32,94.71,0.0,5s,1m 34s,0s,whatsapp,0,0,0,0,0,25.61,1,Analyst,Business,❌ Not Productive,2025-09-20 16:00:00,1758364200
+20250920,Nitro-55efb254,0.2,0.2,0.26,0,7,5.32,94.71,0.0,5s,1m 34s,0s,whatsapp,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 16:00:05,1758364205
+20250920,Nitro-55efb254,4.22,0.0,0.06,0,7,5.32,94.71,0.0,5s,1m 34s,0s,whatsapp,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 16:00:10,1758364210
+20250920,Nitro-55efb254,1.6,0.0,0.61,0,7,5.32,94.71,0.0,5s,1m 34s,0s,whatsapp,0,0,0,0,0,25.61,1,Analyst,Business,❌ Not Productive,2025-09-20 16:00:15,1758364215
+20250920,Nitro-55efb254,4.43,0.0,0.01,0,7,5.32,94.71,0.0,5s,1m 34s,0s,whatsapp,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 16:00:20,1758364220
+20250920,Nitro-55efb254,3.17,1.9,0.03,0,7,5.32,94.71,0.0,5s,1m 34s,0s,whatsapp,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 16:00:25,1758364225
+20250920,Nitro-55efb254,0.0,1.94,0.11,0,7,5.32,94.71,0.0,5s,1m 34s,0s,,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 16:00:30,1758364230
+20250920,Nitro-55efb254,0.0,0.0,5.11,0,7,5.32,94.71,0.0,5s,1m 34s,0s,,0,0,0,0,0,23.83,1,Analyst,Business,❌ Not Productive,2025-09-20 16:00:35,1758364235
+20250920,Nitro-55efb254,0.0,0.13,0.0,0,7,5.32,94.71,0.0,5s,1m 34s,0s,,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 16:00:40,1758364240
+20250920,Nitro-55efb254,3.88,0.12,0.12,1,8,5.32,127.72,0.0,5s,2m 7s,0s,project2 - google chrome,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 16:01:13,1758364273
+20250920,Nitro-55efb254,6.03,0.0,0.12,0,8,5.32,129.71,0.0,5s,2m 9s,0s,project2 - google chrome,0,0,0,0,0,25.79,1,Analyst,Business,❌ Not Productive,2025-09-20 16:01:15,1758364275
