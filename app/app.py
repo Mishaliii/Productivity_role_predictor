@@ -44,10 +44,12 @@ def start_flask_server_if_missing(host: str = "127.0.0.1", port: int = 5000):
     if is_port_in_use(host, port):
         return
     try:
-        subprocess.Popen([sys.executable, server_path],
-                         stdout=subprocess.DEVNULL,
-                         stderr=subprocess.DEVNULL,
-                         close_fds=True)
+        subprocess.Popen(
+            [sys.executable, server_path],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            close_fds=True
+        )
         time.sleep(1.2)
     except Exception:
         return
@@ -104,6 +106,23 @@ def ensure_df_timestamps(df: pd.DataFrame, col: str = "timestamp") -> pd.DataFra
         pass
     return df
 
+def get_prod_col(df: pd.DataFrame) -> str:
+    """Pick whichever productivity column exists."""
+    if df is not None and not df.empty:
+        if "PredictedProductivity" in df.columns:
+            return "PredictedProductivity"
+        if "productivity" in df.columns:
+            return "productivity"
+    return "PredictedProductivity"  # default
+
+def get_status_col(df: pd.DataFrame) -> str:
+    if df is not None and not df.empty:
+        if "ProductivityStatus" in df.columns:
+            return "ProductivityStatus"
+        if "status" in df.columns:
+            return "status"
+    return "ProductivityStatus"
+
 # ======== LOGIN ========
 if not show_login():
     st.stop()
@@ -138,12 +157,15 @@ if user["role"] == "user":
         if isinstance(latest_row, pd.DataFrame):
             latest_row = latest_row.iloc[0]
 
+        # Ensure training features exist
         for col in train_feature_list:
             if col not in latest_row.index:
                 latest_row[col] = 0.0
 
-        X = pd.DataFrame([latest_row.loc[train_feature_list].astype(float).to_list()],
-                         columns=train_feature_list)
+        X = pd.DataFrame(
+            [latest_row.loc[train_feature_list].astype(float).to_list()],
+            columns=train_feature_list
+        )
         X_scaled = scaler.transform(X)
 
         predicted_productivity = round(float(reg_model.predict(X_scaled)[0]), 2)
@@ -159,56 +181,66 @@ if user["role"] == "user":
             "Analyst": "Business",
         }
         role_group = role_group_map.get(predicted_role, predicted_role)
+
+        # Idle rule: if no activity at all, force productivity to 0
+        coding_time = float(safe_get(latest_row, "time_coding", 0))
+        browsing_time = float(safe_get(latest_row, "time_browsing", 0))
+        other_time = float(safe_get(latest_row, "time_other", 0))
+        total_active = (coding_time or 0) + (browsing_time or 0) + (other_time or 0)
+        if total_active == 0:
+            predicted_productivity = 0.0
+
         status = "✅ Productive" if predicted_productivity >= PRODUCTIVITY_THRESHOLD else "❌ Not Productive"
 
-        coding_time = safe_get(latest_row, "time_coding", 0)
-        browsing_time = safe_get(latest_row, "time_browsing", 0)
-        other_time = safe_get(latest_row, "time_other", 0)
-
+        # Save
         save_row = latest_row.to_dict()
         save_row.update({
             "PredictedProductivity": predicted_productivity,
+            "productivity": predicted_productivity,  # shadow column for compatibility
             "ClusterID": predicted_cluster,
             "RoleName": predicted_role,
             "RoleGroup": role_group,
             "ProductivityStatus": status,
+            "status": status,  # shadow column for compatibility
             "Timestamp": dt.now().strftime("%Y-%m-%d %H:%M:%S"),
             "SessionID": SESSION_ID
         })
 
         insert_log(user["id"], save_row)
         try:
-            requests.post(f"{SERVER_URL}/api/logs",
-                          json={**save_row, "user_id": user["id"], "username": user["username"]},
-                          timeout=2.5)
+            requests.post(
+                f"{SERVER_URL}/api/logs",
+                json={**save_row, "user_id": user["id"], "username": user["username"]},
+                timeout=2.5
+            )
         except Exception:
             pass
 
         df_log = get_logs(user_id=user["id"])
         df_log = ensure_df_timestamps(df_log)
+        prod_col = get_prod_col(df_log)
 
-        st.subheader("🧩 Latest Capture + Prediction")
-        st.write({
-            "PredictedProductivity": predicted_productivity,
-            "Role": predicted_role,
-            "RoleGroup": role_group,
-            "Status": status,
-            "Timestamp": save_row["Timestamp"]
-        })
+        # Clean, professional KPIs (no raw dict)
+        st.subheader("🧩 Latest Capture & Prediction")
+        k1, k2, k3 = st.columns(3)
+        k1.metric("Productivity", f"{predicted_productivity:.2f}")
+        k2.metric("Role", predicted_role)
+        k3.metric("Status", status)
+        k4, k5, k6 = st.columns(3)
+        k4.metric("Group", role_group)
+        k5.metric("Coding Time", format_time(coding_time))
+        k6.metric("Last Update", save_row["Timestamp"])
 
-        session_avg = (df_log["productivity"].astype(float).mean()
-                       if (df_log is not None and not df_log.empty and "productivity" in df_log.columns)
-                       else predicted_productivity)
+        # Session average using the right column
+        session_avg = (
+            df_log[prod_col].astype(float).mean()
+            if (df_log is not None and not df_log.empty and prod_col in df_log.columns)
+            else predicted_productivity
+        )
 
-        c1, c2, c3, c4, c5, c6, c7, c8 = st.columns(8)
-        c1.metric("Latest Productivity", f"{predicted_productivity:.2f}")
-        c2.metric("Session Avg", f"{session_avg:.2f}")
-        c3.metric("Role", predicted_role)
-        c4.metric("Group", role_group)
-        c5.metric("Status", status)
-        c6.metric("Coding Time", format_time(coding_time))
-        c7.metric("Browsing Time", format_time(browsing_time))
-        c8.metric("Other Time", format_time(other_time))
+        c1, c2 = st.columns(2)
+        c1.metric("Session Avg", f"{session_avg:.2f}")
+        c2.metric("Active Time (s)", int(total_active))
 
         st.subheader("📌 My Recent Logs")
         if df_log is None or df_log.empty:
@@ -216,6 +248,7 @@ if user["role"] == "user":
         else:
             st.dataframe(df_log.head(15).reset_index(drop=True), use_container_width=True)
 
+        # Radar chart (latest features)
         latest_features = {
             "Typing": float(safe_get(latest_row, "typing_intensity", 0)),
             "Mouse": float(safe_get(latest_row, "mouse_intensity", 0)),
@@ -227,16 +260,18 @@ if user["role"] == "user":
         fig_radar.update_traces(fill="toself")
         st.plotly_chart(fig_radar, use_container_width=True)
 
+        # Trends
         if df_log is not None and not df_log.empty and "timestamp" in df_log.columns:
-            if "productivity" in df_log.columns:
+            df_sorted = df_log.sort_values("timestamp")
+            if prod_col in df_sorted.columns:
                 st.subheader("📈 Productivity Trend")
-                st.line_chart(df_log.sort_values("timestamp").set_index("timestamp")["productivity"].astype(float))
-            if "task_switch_total" in df_log.columns:
+                st.line_chart(df_sorted.set_index("timestamp")[prod_col].astype(float))
+            if "task_switch_total" in df_sorted.columns:
                 st.subheader("🔄 Task Switching Trend")
-                st.line_chart(df_log.sort_values("timestamp").set_index("timestamp")["task_switch_total"].astype(int))
-            if "idle_duration" in df_log.columns:
+                st.line_chart(df_sorted.set_index("timestamp")["task_switch_total"].astype(int))
+            if "idle_duration" in df_sorted.columns:
                 st.subheader("⏳ Idle Duration Trend")
-                st.line_chart(df_log.sort_values("timestamp").set_index("timestamp")["idle_duration"].astype(float))
+                st.line_chart(df_sorted.set_index("timestamp")["idle_duration"].astype(float))
 
     except Exception as e:
         st.error(f"❌ Error in personal dashboard: {e}")
@@ -263,8 +298,11 @@ elif user["role"] == "admin":
                 st.warning("⚠️ No logs yet.")
             else:
                 df_log = ensure_df_timestamps(df_log)
+                prod_col = get_prod_col(df_log)
+                status_col = get_status_col(df_log)
+
                 latest_per_user = df_log.sort_values("timestamp").groupby("user_id", as_index=False).last()
-                avg_prod = df_log.groupby("user_id", as_index=False)["productivity"].mean()
+                avg_prod = df_log.groupby("user_id", as_index=False)[prod_col].mean()
                 avg_prod.columns = ["user_id", "avg_productivity"]
                 summary = latest_per_user.merge(avg_prod, on="user_id", how="left")
 
@@ -278,12 +316,14 @@ elif user["role"] == "admin":
                     summary["username"] = summary["user_id"].apply(lambda x: f"User {x}")
 
                 st.subheader("📌 Users at a Glance")
-                display_table = summary[["username", "role", "avg_productivity", "timestamp", "status", "active_status"]]
+                display_table = summary[["username", "role", "avg_productivity", "timestamp", status_col, "active_status"]]
+                display_table = display_table.rename(columns={status_col: "status"})
                 display_table = display_table.sort_values("avg_productivity", ascending=False).reset_index(drop=True)
                 st.dataframe(display_table, use_container_width=True)
 
                 st.subheader("📊 Leaderboard — Average Productivity")
-                leaderboard = summary.sort_values("avg_productivity", ascending=False)
+                leaderboard = summary.sort_values("avg_productivity", ascending=False).copy()
+                leaderboard["username"] = leaderboard["username"].astype(str)
                 fig_lb = px.bar(
                     leaderboard,
                     x="username",
@@ -293,10 +333,11 @@ elif user["role"] == "admin":
                     title="Average Productivity by User"
                 )
                 fig_lb.update_traces(textposition="outside")
+                fig_lb.update_layout(yaxis_title="Avg Productivity", xaxis_title="User", xaxis_tickangle=-30)
                 st.plotly_chart(fig_lb, use_container_width=True)
 
                 st.subheader("🔎 Team Productivity Status")
-                status_counts = summary["status"].fillna("Unknown").value_counts().reset_index()
+                status_counts = summary[status_col].fillna("Unknown").value_counts().reset_index()
                 status_counts.columns = ["status", "count"]
                 fig_status = px.pie(status_counts, names="status", values="count", hole=0.4)
                 st.plotly_chart(fig_status, use_container_width=True)
@@ -308,46 +349,60 @@ elif user["role"] == "admin":
                 fig_roles.update_traces(textposition="outside")
                 st.plotly_chart(fig_roles, use_container_width=True)
 
+                # Drilldown
                 st.markdown("---")
                 st.subheader("🔍 Inspect a User (drilldown)")
                 usernames = sorted(summary["username"].unique().tolist())
                 if usernames:
                     selected_user = st.selectbox("Select user to inspect", usernames, index=0)
+
+                    # Refresh logs for latest activity
                     df_log = get_logs()
                     df_log = ensure_df_timestamps(df_log)
-                    user_data = df_log[df_log["username"] == selected_user].sort_values("timestamp")
+                    prod_col = get_prod_col(df_log)
 
-                    if user_data.empty and "user_id" in df_log.columns:
+                    user_data = pd.DataFrame()
+                    if "username" in df_log.columns:
+                        user_data = df_log[df_log["username"] == selected_user].sort_values("timestamp")
+
+                    if (user_data is None or user_data.empty) and "user_id" in df_log.columns:
                         user_ids = sorted(df_log["user_id"].unique().tolist())
                         selected_id = st.selectbox("Or select user_id", user_ids, index=0)
                         user_data = df_log[df_log["user_id"] == selected_id].sort_values("timestamp")
                         if "username" in df_log.columns and not user_data.empty:
                             selected_user = user_data["username"].iloc[-1]
 
-                    if user_data.empty:
-                        st.info("No logs for selected user.")
+                    if user_data is None or user_data.empty:
+                        st.info("No logs available yet for the selected user.")
                     else:
                         st.write(f"### Latest logs for {selected_user}")
                         st.dataframe(user_data.tail(20).reset_index(drop=True), use_container_width=True)
-                        if "productivity" in user_data.columns:
+
+                        if prod_col in user_data.columns:
                             st.subheader("📈 Productivity Trend")
-                            st.line_chart(user_data.set_index("timestamp")["productivity"].astype(float))
+                            st.line_chart(user_data.set_index("timestamp")[prod_col].astype(float))
+
                         if "task_switch_total" in user_data.columns:
                             st.subheader("🔄 Task Switching Trend")
                             st.line_chart(user_data.set_index("timestamp")["task_switch_total"].astype(int))
+
                         if "idle_duration" in user_data.columns:
                             st.subheader("⏳ Idle Duration Trend")
                             st.line_chart(user_data.set_index("timestamp")["idle_duration"].astype(float))
                 else:
-                    st.info("No users to inspect.")
+                    st.info("No users to inspect (no logs).")
+
         except Exception as e:
             st.error(f"❌ Error in admin dashboard: {e}")
 
     elif admin_option == "Loaded Dataset":
         st.header("📂 Preview Dataset")
         dataset_choice = st.selectbox("Select dataset", ["Train", "Test"])
-        file_path = os.path.join(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")), "data",
-                                 "train.csv" if dataset_choice == "Train" else "test.csv")
+        file_path = os.path.join(
+            os.path.abspath(os.path.join(os.path.dirname(__file__), "..")),
+            "data",
+            "train.csv" if dataset_choice == "Train" else "test.csv"
+        )
         if os.path.exists(file_path):
             df_data = pd.read_csv(file_path)
             st.dataframe(df_data.head(50), use_container_width=True)
@@ -356,7 +411,7 @@ elif user["role"] == "admin":
             st.error(f"Dataset not found: {file_path}")
 
     elif admin_option == "Self Productivity Testing":
-        st.header("🧪 Admin Self Productivity Test")
+        st.header("🧪 Admin Self Productivity Test (no logs saved)")
         try:
             reg_model, cluster_model, scaler, train_feature_list, cluster_role_map = load_models_safe()
             latest_row = get_realtime_data()
@@ -371,6 +426,13 @@ elif user["role"] == "admin":
             predicted_productivity = round(float(reg_model.predict(X_scaled)[0]), 2)
             predicted_cluster = int(cluster_model.predict(X_scaled)[0])
             predicted_role = cluster_role_map.get(predicted_cluster, f"Cluster {predicted_cluster}")
+
+            # Idle rule in self-test as well
+            coding_time = float(safe_get(latest_row, "time_coding", 0))
+            browsing_time = float(safe_get(latest_row, "time_browsing", 0))
+            other_time = float(safe_get(latest_row, "time_other", 0))
+            if (coding_time + browsing_time + other_time) == 0:
+                predicted_productivity = 0.0
             status = "✅ Productive" if predicted_productivity >= PRODUCTIVITY_THRESHOLD else "❌ Not Productive"
 
             c1, c2, c3 = st.columns(3)
@@ -379,7 +441,8 @@ elif user["role"] == "admin":
             c3.metric("Status", status)
 
             st.subheader("Raw Capture (not saved)")
-            st.write(latest_row.to_dict())
+            st.write(latest_row.to_dict() if hasattr(latest_row, "to_dict") else latest_row)
+
         except Exception as e:
             st.error(f"❌ Error in self test: {e}")
 
