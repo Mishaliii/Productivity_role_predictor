@@ -2,6 +2,7 @@
 import os
 import sys
 import time
+import threading
 import subprocess
 import socket
 import pandas as pd
@@ -26,7 +27,7 @@ from script.collect_realtime_data import get_realtime_data
 # ===== INIT DB =====
 init_db()
 
-# ===== AUTO-START FLASK SERVER =====
+# ===== AUTO-START FLASK SERVER (optional) =====
 def is_port_in_use(host: str, port: int) -> bool:
     try:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -61,8 +62,9 @@ SERVER_URL = f"http://{SERVER_HOST}:{SERVER_PORT}"
 # ===== CONFIG =====
 PRODUCTIVITY_THRESHOLD = 70
 SESSION_ID = int(time.time())
+COLLECT_INTERVAL_SEC = 5  # background collection cadence
 
-# ===== LOAD MODELS =====
+# ===== LOAD MODELS (cached) =====
 @st.cache_resource
 def load_models_safe():
     base = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -120,6 +122,64 @@ def get_status_col(df: pd.DataFrame) -> str:
             return "status"
     return "ProductivityStatus"
 
+ROLE_GROUP_MAP = {
+    "Developer": "Technical",
+    "Engineer": "Technical",
+    "Designer": "Creative",
+    "Writer": "Creative",
+    "Manager": "Business",
+    "Analyst": "Business",
+    "Idle": "Idle",
+}
+
+def predict_and_build_row(
+    latest_row: pd.Series,
+    reg_model, cluster_model, scaler, train_feature_list, cluster_role_map
+) -> dict:
+    """Turn a captured row into a predicted, DB-ready dict."""
+    # ensure all features
+    for col in train_feature_list:
+        if col not in latest_row.index:
+            latest_row[col] = 0.0
+
+    X = pd.DataFrame(
+        [latest_row.loc[train_feature_list].astype(float).to_list()],
+        columns=train_feature_list
+    )
+    X_scaled = scaler.transform(X)
+
+    predicted_productivity = round(float(reg_model.predict(X_scaled)[0]), 2)
+    predicted_cluster = int(cluster_model.predict(X_scaled)[0])
+    predicted_role = cluster_role_map.get(predicted_cluster, f"Cluster {predicted_cluster}")
+
+    # Idle override (no activity -> productivity 0 + Idle role)
+    coding_time = float(safe_get(latest_row, "time_coding", 0))
+    browsing_time = float(safe_get(latest_row, "time_browsing", 0))
+    other_time = float(safe_get(latest_row, "time_other", 0))
+    total_active = coding_time + browsing_time + other_time
+    if total_active == 0:
+        predicted_productivity = 0.0
+        predicted_role = "Idle"
+
+    role_group = ROLE_GROUP_MAP.get(predicted_role, predicted_role)
+    status = "✅ Productive" if predicted_productivity >= PRODUCTIVITY_THRESHOLD else "❌ Not Productive"
+    now_str = dt.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    save_row = latest_row.to_dict()
+    save_row.update({
+        "PredictedProductivity": predicted_productivity,
+        "productivity": predicted_productivity,
+        "ClusterID": predicted_cluster,
+        "RoleName": predicted_role,
+        "RoleGroup": role_group,
+        "ProductivityStatus": status,
+        "status": status,
+        "Timestamp": now_str,
+        "timestamp": now_str,
+        "SessionID": SESSION_ID
+    })
+    return save_row
+
 # ===== LOGIN =====
 if not show_login():
     st.stop()
@@ -137,107 +197,115 @@ user = {
     "role": st.session_state.role,
 }
 
-# ================= USER VIEW =================
-if user["role"] == "user":
+# ===== BACKGROUND COLLECTOR (per-user session) =====
+def ensure_background_collector(user_ctx: dict):
+    """
+    Starts a daemon thread that writes logs every COLLECT_INTERVAL_SEC.
+    Prevents 'only ~14 rows' by collecting continuously.
+    """
+    if "collector_running" in st.session_state and st.session_state["collector_running"]:
+        return  # already running
+
+    # Load models once for the thread context
     try:
         reg_model, cluster_model, scaler, train_feature_list, cluster_role_map = load_models_safe()
     except Exception as e:
-        st.error(f"❌ Error loading models: {e}")
-        st.stop()
+        st.error(f"❌ Could not load models for collector: {e}")
+        return
 
+    def collector_loop(user_id: int, username: str):
+        while True:
+            try:
+                latest_df = get_realtime_data()
+                if isinstance(latest_df, pd.DataFrame):
+                    latest_row = latest_df.iloc[0]
+                else:
+                    # If some impl returns a Series
+                    latest_row = latest_df
+
+                save_row = predict_and_build_row(
+                    latest_row, reg_model, cluster_model, scaler, train_feature_list, cluster_role_map
+                )
+                insert_log(user_id, save_row)
+                # Best-effort central sync
+                try:
+                    requests.post(
+                        f"{SERVER_URL}/api/logs",
+                        json={**save_row, "user_id": user_id, "username": username},
+                        timeout=2.5
+                    )
+                except Exception:
+                    pass
+            except Exception as e:
+                # Do not crash thread; print to console for debugging
+                print(f"[collector_loop] error: {e}")
+            time.sleep(COLLECT_INTERVAL_SEC)
+
+    t = threading.Thread(
+        target=collector_loop,
+        args=(user_ctx["id"], user_ctx["username"]),
+        daemon=True
+    )
+    t.start()
+    st.session_state["collector_running"] = True
+
+# ================= USER VIEW =================
+if user["role"] == "user":
+    # start background collector once per session
+    ensure_background_collector(user)
+
+    # User dashboard continues to refresh the UI every 5s
     st.header(f"⚡ My Productivity Dashboard — {user['username']}")
     st_autorefresh(interval=5000, key="user_refresh")
 
     try:
         with st.spinner("Collecting activity and updating predictions..."):
-            latest_row = get_realtime_data()
-            if isinstance(latest_row, pd.DataFrame):
-                latest_row = latest_row.iloc[0]
+            # fetch latest capture (for display only; database writing happens in background)
+            latest_df = get_realtime_data()
+            latest_row = latest_df.iloc[0] if isinstance(latest_df, pd.DataFrame) else latest_df
 
-            # Ensure features
-            for col in train_feature_list:
-                if col not in latest_row.index:
-                    latest_row[col] = 0.0
+            # Load models to display a consistent prediction now
+            reg_model, cluster_model, scaler, train_feature_list, cluster_role_map = load_models_safe()
+            save_row = predict_and_build_row(
+                latest_row, reg_model, cluster_model, scaler, train_feature_list, cluster_role_map
+            )
 
-            X = pd.DataFrame([latest_row.loc[train_feature_list].astype(float).to_list()],
-                             columns=train_feature_list)
-            X_scaled = scaler.transform(X)
-
-            predicted_productivity = round(float(reg_model.predict(X_scaled)[0]), 2)
-            predicted_cluster = int(cluster_model.predict(X_scaled)[0])
-            predicted_role = cluster_role_map.get(predicted_cluster, f"Cluster {predicted_cluster}")
-
-            # Idle override
-            coding_time = float(safe_get(latest_row, "time_coding", 0))
-            browsing_time = float(safe_get(latest_row, "time_browsing", 0))
-            other_time = float(safe_get(latest_row, "time_other", 0))
-            total_active = coding_time + browsing_time + other_time
-            if total_active == 0:
-                predicted_productivity = 0.0
-                predicted_role = "Idle"
-            role_group_map = {
-                "Developer": "Technical", "Engineer": "Technical",
-                "Designer": "Creative", "Writer": "Creative",
-                "Manager": "Business", "Analyst": "Business", "Idle": "Idle"
-            }
-            role_group = role_group_map.get(predicted_role, predicted_role)
-
-            status = "✅ Productive" if predicted_productivity >= PRODUCTIVITY_THRESHOLD else "❌ Not Productive"
-
-            save_row = latest_row.to_dict()
-            now_str = dt.now().strftime("%Y-%m-%d %H:%M:%S")
-            save_row.update({
-                "PredictedProductivity": predicted_productivity,
-                "productivity": predicted_productivity,
-                "ClusterID": predicted_cluster,
-                "RoleName": predicted_role,
-                "RoleGroup": role_group,
-                "ProductivityStatus": status,
-                "status": status,
-                "Timestamp": now_str,
-                "timestamp": now_str,
-                "SessionID": SESSION_ID
-            })
-
-            insert_log(user["id"], save_row)
-            try:
-                requests.post(f"{SERVER_URL}/api/logs",
-                              json={**save_row, "user_id": user["id"], "username": user["username"]},
-                              timeout=2.5)
-            except Exception:
-                pass
-
+        # Read all user logs (no artificial caps)
         df_log = get_logs(user_id=user["id"])
         df_log = unify_timestamps(df_log)
         prod_col = get_prod_col(df_log)
 
-        # ---- KPIs ----
+        # ---- KPIs (no raw dicts) ----
         st.subheader("🧩 Latest Capture & Prediction")
         k1, k2, k3 = st.columns(3)
-        k1.metric("Productivity", f"{predicted_productivity:.2f}")
-        k2.metric("Role", predicted_role)
-        k3.metric("Status", status)
+        k1.metric("Productivity", f"{save_row['PredictedProductivity']:.2f}")
+        k2.metric("Role", save_row["RoleName"])
+        k3.metric("Status", save_row["ProductivityStatus"])
         k4, k5, k6 = st.columns(3)
-        k4.metric("Group", role_group)
+        total_active = float(safe_get(latest_row, "time_coding", 0)) + float(safe_get(latest_row, "time_browsing", 0)) + float(safe_get(latest_row, "time_other", 0))
+        k4.metric("Group", save_row["RoleGroup"])
         k5.metric("Active Time (s)", int(total_active))
-        k6.metric("Last Update", now_str)
+        k6.metric("Last Update", save_row["Timestamp"])
 
+        # ---- Session Avg ----
         session_avg = (
             df_log[prod_col].astype(float).mean()
             if (df_log is not None and not df_log.empty and prod_col in df_log.columns)
-            else predicted_productivity
+            else float(save_row["PredictedProductivity"])
         )
         c1, c2 = st.columns(2)
         c1.metric("Session Avg", f"{session_avg:.2f}")
-        rows_to_show = c2.selectbox("Rows to show", [20, 50, 100, 200, 500], index=0)
+        rows_to_show = c2.selectbox("Rows to show", [20, 50, 100, 200, 500], index=1)
 
         # ---- Logs ----
         st.subheader("📌 My Recent Logs")
         if df_log is None or df_log.empty:
             st.info("No logs saved yet.")
         else:
-            st.dataframe(df_log.sort_values("timestamp", ascending=False).head(rows_to_show).reset_index(drop=True),
-                         use_container_width=True)
+            st.dataframe(
+                df_log.sort_values("timestamp", ascending=False).head(rows_to_show).reset_index(drop=True),
+                use_container_width=True
+            )
 
         # ---- Radar ----
         latest_features = {
@@ -301,6 +369,7 @@ elif user["role"] == "admin":
                 summary = latest_per_user.merge(avg_prod, on="user_id", how="left")
 
                 now = dt.now()
+                # dynamic "active" window so users aren't falsely inactive
                 active_window = max(10, refresh_seconds * 2 + 5)
                 summary["LastActive"] = pd.to_datetime(summary["timestamp"], errors="coerce")
                 summary["active_status"] = summary["LastActive"].apply(
@@ -311,11 +380,13 @@ elif user["role"] == "admin":
                     summary["username"] = summary["user_id"].apply(lambda x: f"User {x}")
 
                 st.subheader("📌 Users at a Glance")
-                st.dataframe(summary[["username", "role", "avg_productivity", "timestamp", status_col, "active_status"]]
-                             .rename(columns={status_col: "status"})
-                             .sort_values("avg_productivity", ascending=False)
-                             .reset_index(drop=True),
-                             use_container_width=True)
+                st.dataframe(
+                    summary[["username", "role", "avg_productivity", "timestamp", status_col, "active_status"]]
+                    .rename(columns={status_col: "status"})
+                    .sort_values("avg_productivity", ascending=False)
+                    .reset_index(drop=True),
+                    use_container_width=True
+                )
 
                 st.subheader("📊 Leaderboard — Average Productivity")
                 fig_lb = px.bar(
@@ -340,11 +411,12 @@ elif user["role"] == "admin":
                 fig_roles.update_traces(textposition="outside")
                 st.plotly_chart(fig_roles, use_container_width=True)
 
+                # Drilldown
                 st.markdown("---")
                 st.subheader("🔍 Inspect a User (drilldown)")
                 usernames = sorted(summary["username"].unique().tolist())
                 if usernames:
-                    selected_user = st.selectbox("Select user", usernames, index=0)
+                    selected_user = st.selectbox("Select user to inspect", usernames, index=0)
                     df_log = get_logs()
                     df_log = unify_timestamps(df_log)
                     prod_col = get_prod_col(df_log)
@@ -358,7 +430,7 @@ elif user["role"] == "admin":
                     if user_data.empty:
                         st.info("No logs for selected user.")
                     else:
-                        rows_drill = st.selectbox("Rows to show", [20, 50, 100, 200, 500], index=0)
+                        rows_drill = st.selectbox("Rows to show", [20, 50, 100, 200, 500], index=1)
                         st.dataframe(user_data.tail(rows_drill).reset_index(drop=True), use_container_width=True)
                         if prod_col in user_data.columns:
                             st.subheader("📈 Productivity Trend")
@@ -397,32 +469,16 @@ elif user["role"] == "admin":
         try:
             with st.spinner("Running realtime capture and prediction..."):
                 reg_model, cluster_model, scaler, train_feature_list, cluster_role_map = load_models_safe()
-                latest_row = get_realtime_data()
-                if isinstance(latest_row, pd.DataFrame):
-                    latest_row = latest_row.iloc[0]
-                for col in train_feature_list:
-                    if col not in latest_row.index:
-                        latest_row[col] = 0
-                X = pd.DataFrame([latest_row.loc[train_feature_list].astype(float).to_list()],
-                                 columns=train_feature_list)
-                X_scaled = scaler.transform(X)
-                predicted_productivity = round(float(reg_model.predict(X_scaled)[0]), 2)
-                predicted_cluster = int(cluster_model.predict(X_scaled)[0])
-                predicted_role = cluster_role_map.get(predicted_cluster, f"Cluster {predicted_cluster}")
-
-                # Idle override
-                coding_time = float(safe_get(latest_row, "time_coding", 0))
-                browsing_time = float(safe_get(latest_row, "time_browsing", 0))
-                other_time = float(safe_get(latest_row, "time_other", 0))
-                if (coding_time + browsing_time + other_time) == 0:
-                    predicted_productivity = 0.0
-                    predicted_role = "Idle"
-                status = "✅ Productive" if predicted_productivity >= PRODUCTIVITY_THRESHOLD else "❌ Not Productive"
+                latest_df = get_realtime_data()
+                latest_row = latest_df.iloc[0] if isinstance(latest_df, pd.DataFrame) else latest_df
+                save_row = predict_and_build_row(
+                    latest_row, reg_model, cluster_model, scaler, train_feature_list, cluster_role_map
+                )
 
             c1, c2, c3 = st.columns(3)
-            c1.metric("Predicted Productivity", f"{predicted_productivity:.2f}")
-            c2.metric("Predicted Role", predicted_role)
-            c3.metric("Status", status)
+            c1.metric("Predicted Productivity", f"{save_row['PredictedProductivity']:.2f}")
+            c2.metric("Predicted Role", save_row["RoleName"])
+            c3.metric("Status", save_row["ProductivityStatus"])
 
             st.subheader("Latest Capture (key fields)")
             show_keys = ["typing_intensity", "mouse_intensity", "idle_duration", "task_switch_total",

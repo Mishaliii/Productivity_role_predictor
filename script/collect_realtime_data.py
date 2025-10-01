@@ -9,7 +9,7 @@ import uuid
 import os
 from datetime import datetime
 
-# ================== GLOBAL VARIABLES ==================
+# ================== GLOBAL STATE ==================
 keypress_count = 0
 mouse_clicks = 0
 mouse_distance = 0.0
@@ -18,37 +18,39 @@ last_activity_time = time.time()
 last_fetch_time = time.time()
 
 # Task switching
-last_active_title = None
+last_active_title = ""
 switch_count_total = 0
 
 # Time tracking (cumulative seconds)
 time_counters = {
     "time_coding": 0.0,
     "time_browsing": 0.0,
-    "time_other": 0.0   # grouped: docs, email, meetings, socialmedia
+    "time_other": 0.0
 }
 
-# ================== DEVICE ID (Persistent) ==================
+# ================== DEVICE ID ==================
 DEVICE_ID_FILE = os.path.join(os.path.dirname(__file__), "..", ".device_id")
 
-def get_device_id():
+def get_device_id() -> str:
     """Return a persistent unique ID for this device."""
-    if os.path.exists(DEVICE_ID_FILE):
-        with open(DEVICE_ID_FILE, "r") as f:
-            return f.read().strip()
-    # Generate new unique ID
-    new_id = f"{socket.gethostname()}-{uuid.uuid4().hex[:8]}"
-    with open(DEVICE_ID_FILE, "w") as f:
-        f.write(new_id)
-    return new_id
+    try:
+        if os.path.exists(DEVICE_ID_FILE):
+            with open(DEVICE_ID_FILE, "r") as f:
+                return f.read().strip()
+        new_id = f"{socket.gethostname()}-{uuid.uuid4().hex[:8]}"
+        with open(DEVICE_ID_FILE, "w") as f:
+            f.write(new_id)
+        return new_id
+    except Exception:
+        # fallback if file write fails
+        return f"{socket.gethostname()}-{uuid.uuid4().hex[:8]}"
 
 DEVICE_ID = get_device_id()
 
-# ================== SESSION ID (Daily Persistent) ==================
-def get_session_id():
+# ================== SESSION ID ==================
+def get_session_id() -> int:
     """Return a session ID that persists for the day."""
-    today = datetime.now().strftime("%Y%m%d")
-    return int(today)
+    return int(datetime.now().strftime("%Y%m%d"))
 
 SESSION_ID = get_session_id()
 
@@ -69,27 +71,26 @@ def on_move(x, y):
     if last_mouse_position is not None:
         dx = x - last_mouse_position[0]
         dy = y - last_mouse_position[1]
-        mouse_distance += math.sqrt(dx * dx + dy * dy)
+        mouse_distance += math.hypot(dx, dy)
     last_mouse_position = (x, y)
     last_activity_time = time.time()
 
-# ================== START LISTENERS (ONCE) ==================
+# Start listeners once (daemon so app doesn't block)
 keyboard.Listener(on_press=on_keypress, daemon=True).start()
 mouse.Listener(on_click=on_click, on_move=on_move, daemon=True).start()
 
-# ================== ACTIVE WINDOW HELPER ==================
-def get_active_window_title():
+# ================== ACTIVE WINDOW ==================
+def get_active_window_title() -> str:
     try:
         window = gw.getActiveWindow()
-        if window is not None:
+        if window:
             return (window.title or "").strip().lower()
     except Exception:
         return ""
     return ""
 
-# ================== FORMATTER ==================
+# ================== UTIL ==================
 def format_time(seconds: float) -> str:
-    """Convert raw seconds to human-readable string."""
     if seconds < 60:
         return f"{int(seconds)}s"
     elif seconds < 3600:
@@ -100,8 +101,12 @@ def format_time(seconds: float) -> str:
         mins, secs = divmod(rem, 60)
         return f"{hrs}h {mins}m"
 
-# ================== MAIN FUNCTION ==================
-def get_realtime_data():
+# ================== MAIN ==================
+def get_realtime_data() -> pd.DataFrame:
+    """
+    Capture current activity metrics since last call.
+    Returns a one-row DataFrame with consistent columns.
+    """
     global keypress_count, mouse_clicks, mouse_distance
     global last_activity_time, last_fetch_time
     global last_active_title, switch_count_total, time_counters
@@ -113,23 +118,23 @@ def get_realtime_data():
     # Idle time
     idle_time = now - last_activity_time
 
-    # Intensities
+    # Event intensities
     typing_intensity = keypress_count / interval
     mouse_intensity = (mouse_clicks + (mouse_distance / 100.0)) / interval
 
     # Active window
     active_title = get_active_window_title()
 
-    # ================== Task Switching ==================
+    # --- Task Switching ---
     task_switch_delta = 0
-    if last_active_title is None:
+    if not last_active_title:
         last_active_title = active_title
     elif active_title and active_title != last_active_title:
         switch_count_total += 1
-        task_switch_delta += 1   # accumulate count properly
+        task_switch_delta = 1
         last_active_title = active_title
 
-    # Categories
+    # --- Categorize Window ---
     coding_apps = ["vscode", "visual studio", "visual studio code", "pycharm",
                    "sublime", "notepad++", "atom", "intellij", "eclipse",
                    "github", "stack overflow", "code"]
@@ -145,41 +150,35 @@ def get_realtime_data():
     if any(a in active_title for a in coding_apps):
         active_category = "time_coding"
     elif any(b in active_title for b in browser_apps):
-        if any(s in active_title for s in social_sites):
-            active_category = "time_other"
-        else:
-            active_category = "time_browsing"
+        active_category = "time_other" if any(s in active_title for s in social_sites) else "time_browsing"
     elif any(a in active_title for a in meeting_apps + docs_apps + mail_apps):
         active_category = "time_other"
 
-    # Accumulate time (seconds)
     if active_category:
         time_counters[active_category] += interval
 
-    # Data row
-    data = {
-        "session_id": [SESSION_ID],
-        "device_id": [DEVICE_ID],
-        "typing_intensity": [round(typing_intensity, 2)],
-        "mouse_intensity": [round(mouse_intensity, 2)],
-        "idle_duration": [round(idle_time, 2)],
-        "task_switch_delta": [task_switch_delta],
-        "task_switch_total": [switch_count_total],
-        "time_coding": [round(time_counters["time_coding"], 2)],
-        "time_browsing": [round(time_counters["time_browsing"], 2)],
-        "time_other": [round(time_counters["time_other"], 2)],
-        # Human-readable
-        "time_coding_str": [format_time(time_counters["time_coding"])],
-        "time_browsing_str": [format_time(time_counters["time_browsing"])],
-        "time_other_str": [format_time(time_counters["time_other"])],
-        "active_window_title": [active_title],
+    # --- Data Row ---
+    row = {
+        "session_id": SESSION_ID,
+        "device_id": DEVICE_ID,
+        "typing_intensity": round(typing_intensity, 2),
+        "mouse_intensity": round(mouse_intensity, 2),
+        "idle_duration": round(idle_time, 2),
+        "task_switch_delta": task_switch_delta,
+        "task_switch_total": switch_count_total,
+        "time_coding": round(time_counters["time_coding"], 2),
+        "time_browsing": round(time_counters["time_browsing"], 2),
+        "time_other": round(time_counters["time_other"], 2),
+        "time_coding_str": format_time(time_counters["time_coding"]),
+        "time_browsing_str": format_time(time_counters["time_browsing"]),
+        "time_other_str": format_time(time_counters["time_other"]),
+        "active_window_title": active_title,
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
     }
 
-    # Reset interval counters
+    # Reset counters for next interval
     keypress_count = 0
     mouse_clicks = 0
     mouse_distance = 0.0
 
-    print(f"DEBUG → Active: {active_title}, ΔSwitch: {task_switch_delta}, TotalSwitch: {switch_count_total}, Cat: {active_category}, TimeCounters: {time_counters}")
-
-    return pd.DataFrame(data)   # ✅ properly indented inside function
+    return pd.DataFrame([row])
