@@ -1,6 +1,5 @@
 # script/db_manager.py
-import sqlite3
-import os
+import sqlite3, os, requests
 from contextlib import contextmanager
 from datetime import datetime
 import hashlib, binascii
@@ -10,7 +9,9 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DB_PATH = os.path.join(BASE_DIR, "data", "database.db")
 os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
 
-# PBKDF2 settings (no external lib needed)
+# Default server (admin PC IP:port)
+SERVER_URL = "http://192.168.220.40:5000"  # Change to your admin PC’s IP
+
 PBKDF2_ITERATIONS = 200_000
 SALT_BYTES = 16
 
@@ -36,7 +37,7 @@ def _verify_password(stored_hash_hex: str, stored_salt_hex: str, provided_passwo
 def init_db():
     with get_conn() as conn:
         cur = conn.cursor()
-        # Users table
+        # Users
         cur.execute("""
         CREATE TABLE IF NOT EXISTS users (
             user_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -46,7 +47,7 @@ def init_db():
             role TEXT CHECK(role IN ('admin','user')) NOT NULL DEFAULT 'user'
         );
         """)
-        # Logs table with username included
+        # Logs
         cur.execute("""
         CREATE TABLE IF NOT EXISTS logs (
             log_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -71,7 +72,6 @@ def init_db():
         conn.commit()
 
 def add_user(username: str, password: str, role: str = "user") -> bool:
-    """Return True if added, False if username exists."""
     pwd_hash, salt = _hash_password(password)
     try:
         with get_conn() as conn:
@@ -85,7 +85,6 @@ def add_user(username: str, password: str, role: str = "user") -> bool:
         return False
 
 def authenticate_user(username: str, password: str):
-    """Returns (user_id, role) if OK, otherwise None"""
     with get_conn() as conn:
         cur = conn.cursor()
         cur.execute("SELECT user_id,password_hash,salt,role FROM users WHERE username=?", (username,))
@@ -112,14 +111,11 @@ def list_users():
 
 def insert_log(user_id: int, row: dict):
     ts = row.get("Timestamp") or datetime.utcnow().isoformat()
-
-    # fetch username for this user_id
     with get_conn() as conn:
         cur = conn.cursor()
         cur.execute("SELECT username FROM users WHERE user_id=?", (user_id,))
         result = cur.fetchone()
         username = result["username"] if result else f"user_{user_id}"
-
     with get_conn() as conn:
         conn.execute("""
             INSERT INTO logs (
@@ -146,6 +142,17 @@ def insert_log(user_id: int, row: dict):
             row.get("ProductivityStatus", "")
         ))
         conn.commit()
+
+def insert_log_with_backup(user_id: int, row: dict):
+    """Save logs locally + try sending to central server"""
+    insert_log(user_id, row)  # always local
+    try:
+        payload = {"user_id": user_id, "row": row}
+        r = requests.post(f"{SERVER_URL}/api/logs", json=payload, timeout=3)
+        if r.status_code != 201:
+            print(f"[Server Sync Failed] {r.status_code}: {r.text}")
+    except Exception as e:
+        print(f"[Server Unreachable] {e}")
 
 def get_logs(user_id: int = None, limit: int = None) -> pd.DataFrame:
     with get_conn() as conn:
