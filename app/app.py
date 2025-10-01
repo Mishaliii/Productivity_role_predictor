@@ -94,14 +94,14 @@ def safe_get(obj, key, default=0):
         except Exception:
             return default
 
-def ensure_df_timestamps(df: pd.DataFrame, col: str = "timestamp") -> pd.DataFrame:
-    if df is None or df.empty or col not in df.columns:
+def unify_timestamps(df: pd.DataFrame) -> pd.DataFrame:
+    if df is None or df.empty:
         return df
     df = df.copy()
-    try:
-        df[col] = pd.to_datetime(df[col], errors="coerce")
-    except Exception:
-        pass
+    if "timestamp" not in df.columns and "Timestamp" in df.columns:
+        df["timestamp"] = df["Timestamp"]
+    if "timestamp" in df.columns:
+        df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
     return df
 
 def get_prod_col(df: pd.DataFrame) -> str:
@@ -129,7 +129,7 @@ with st.sidebar:
         for key in ["logged_in", "username", "user_id", "role"]:
             if key in st.session_state:
                 del st.session_state[key]
-        st.experimental_rerun()
+        st.rerun()
 
 user = {
     "id": st.session_state.user_id,
@@ -146,65 +146,69 @@ if user["role"] == "user":
         st.stop()
 
     st.header(f"⚡ My Productivity Dashboard — {user['username']}")
+    st_autorefresh(interval=5000, key="user_refresh")
 
     try:
-        latest_row = get_realtime_data()
-        if isinstance(latest_row, pd.DataFrame):
-            latest_row = latest_row.iloc[0]
+        with st.spinner("Collecting activity and updating predictions..."):
+            latest_row = get_realtime_data()
+            if isinstance(latest_row, pd.DataFrame):
+                latest_row = latest_row.iloc[0]
 
-        # Ensure features
-        for col in train_feature_list:
-            if col not in latest_row.index:
-                latest_row[col] = 0.0
+            # Ensure features
+            for col in train_feature_list:
+                if col not in latest_row.index:
+                    latest_row[col] = 0.0
 
-        X = pd.DataFrame([latest_row.loc[train_feature_list].astype(float).to_list()],
-                         columns=train_feature_list)
-        X_scaled = scaler.transform(X)
+            X = pd.DataFrame([latest_row.loc[train_feature_list].astype(float).to_list()],
+                             columns=train_feature_list)
+            X_scaled = scaler.transform(X)
 
-        predicted_productivity = round(float(reg_model.predict(X_scaled)[0]), 2)
-        predicted_cluster = int(cluster_model.predict(X_scaled)[0])
-        predicted_role = cluster_role_map.get(predicted_cluster, f"Cluster {predicted_cluster}")
+            predicted_productivity = round(float(reg_model.predict(X_scaled)[0]), 2)
+            predicted_cluster = int(cluster_model.predict(X_scaled)[0])
+            predicted_role = cluster_role_map.get(predicted_cluster, f"Cluster {predicted_cluster}")
 
-        # Idle override
-        coding_time = float(safe_get(latest_row, "time_coding", 0))
-        browsing_time = float(safe_get(latest_row, "time_browsing", 0))
-        other_time = float(safe_get(latest_row, "time_other", 0))
-        total_active = coding_time + browsing_time + other_time
-        if total_active == 0:
-            predicted_productivity = 0.0
-            predicted_role = "Idle"
-        role_group_map = {
-            "Developer": "Technical", "Engineer": "Technical",
-            "Designer": "Creative", "Writer": "Creative",
-            "Manager": "Business", "Analyst": "Business", "Idle": "Idle"
-        }
-        role_group = role_group_map.get(predicted_role, predicted_role)
+            # Idle override
+            coding_time = float(safe_get(latest_row, "time_coding", 0))
+            browsing_time = float(safe_get(latest_row, "time_browsing", 0))
+            other_time = float(safe_get(latest_row, "time_other", 0))
+            total_active = coding_time + browsing_time + other_time
+            if total_active == 0:
+                predicted_productivity = 0.0
+                predicted_role = "Idle"
+            role_group_map = {
+                "Developer": "Technical", "Engineer": "Technical",
+                "Designer": "Creative", "Writer": "Creative",
+                "Manager": "Business", "Analyst": "Business", "Idle": "Idle"
+            }
+            role_group = role_group_map.get(predicted_role, predicted_role)
 
-        status = "✅ Productive" if predicted_productivity >= PRODUCTIVITY_THRESHOLD else "❌ Not Productive"
+            status = "✅ Productive" if predicted_productivity >= PRODUCTIVITY_THRESHOLD else "❌ Not Productive"
 
-        save_row = latest_row.to_dict()
-        save_row.update({
-            "PredictedProductivity": predicted_productivity,
-            "productivity": predicted_productivity,
-            "ClusterID": predicted_cluster,
-            "RoleName": predicted_role,
-            "RoleGroup": role_group,
-            "ProductivityStatus": status,
-            "status": status,
-            "Timestamp": dt.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "SessionID": SESSION_ID
-        })
+            save_row = latest_row.to_dict()
+            now_str = dt.now().strftime("%Y-%m-%d %H:%M:%S")
+            save_row.update({
+                "PredictedProductivity": predicted_productivity,
+                "productivity": predicted_productivity,
+                "ClusterID": predicted_cluster,
+                "RoleName": predicted_role,
+                "RoleGroup": role_group,
+                "ProductivityStatus": status,
+                "status": status,
+                "Timestamp": now_str,
+                "timestamp": now_str,
+                "SessionID": SESSION_ID
+            })
 
-        insert_log(user["id"], save_row)
-        try:
-            requests.post(f"{SERVER_URL}/api/logs",
-                          json={**save_row, "user_id": user["id"], "username": user["username"]},
-                          timeout=2.5)
-        except Exception:
-            pass
+            insert_log(user["id"], save_row)
+            try:
+                requests.post(f"{SERVER_URL}/api/logs",
+                              json={**save_row, "user_id": user["id"], "username": user["username"]},
+                              timeout=2.5)
+            except Exception:
+                pass
 
         df_log = get_logs(user_id=user["id"])
-        df_log = ensure_df_timestamps(df_log)
+        df_log = unify_timestamps(df_log)
         prod_col = get_prod_col(df_log)
 
         # ---- KPIs ----
@@ -215,8 +219,8 @@ if user["role"] == "user":
         k3.metric("Status", status)
         k4, k5, k6 = st.columns(3)
         k4.metric("Group", role_group)
-        k5.metric("Coding Time", format_time(coding_time))
-        k6.metric("Last Update", save_row["Timestamp"])
+        k5.metric("Active Time (s)", int(total_active))
+        k6.metric("Last Update", now_str)
 
         session_avg = (
             df_log[prod_col].astype(float).mean()
@@ -225,14 +229,15 @@ if user["role"] == "user":
         )
         c1, c2 = st.columns(2)
         c1.metric("Session Avg", f"{session_avg:.2f}")
-        c2.metric("Active Time (s)", int(total_active))
+        rows_to_show = c2.selectbox("Rows to show", [20, 50, 100, 200, 500], index=0)
 
         # ---- Logs ----
         st.subheader("📌 My Recent Logs")
         if df_log is None or df_log.empty:
             st.info("No logs saved yet.")
         else:
-            st.dataframe(df_log.tail(15).reset_index(drop=True), use_container_width=True)
+            st.dataframe(df_log.sort_values("timestamp", ascending=False).head(rows_to_show).reset_index(drop=True),
+                         use_container_width=True)
 
         # ---- Radar ----
         latest_features = {
@@ -265,8 +270,13 @@ if user["role"] == "user":
 # ================= ADMIN VIEW =================
 elif user["role"] == "admin":
     st.sidebar.title("👔 Admin Panel")
-    if st.sidebar.button("🔄 Refresh Now"):
-        st.experimental_rerun()
+    refresh_option = st.sidebar.selectbox("Auto-refresh interval", ["Off", "5s", "15s", "30s"], index=1)
+    interval_map = {"Off": 0, "5s": 5, "15s": 15, "30s": 30}
+    refresh_seconds = interval_map.get(refresh_option, 5)
+    if refresh_seconds > 0:
+        st_autorefresh(interval=refresh_seconds * 1000, key=f"admin_refresh_{refresh_seconds}")
+    if st.sidebar.button("🔄 Manual Refresh"):
+        st.rerun()
 
     admin_option = st.sidebar.radio(
         "Choose what to view",
@@ -281,7 +291,7 @@ elif user["role"] == "admin":
             if df_log is None or df_log.empty:
                 st.warning("⚠️ No logs yet.")
             else:
-                df_log = ensure_df_timestamps(df_log)
+                df_log = unify_timestamps(df_log)
                 prod_col = get_prod_col(df_log)
                 status_col = get_status_col(df_log)
 
@@ -291,19 +301,21 @@ elif user["role"] == "admin":
                 summary = latest_per_user.merge(avg_prod, on="user_id", how="left")
 
                 now = dt.now()
+                active_window = max(10, refresh_seconds * 2 + 5)
                 summary["LastActive"] = pd.to_datetime(summary["timestamp"], errors="coerce")
                 summary["active_status"] = summary["LastActive"].apply(
-                    lambda t: "🟢 Active" if (pd.notnull(t) and (now - t).total_seconds() < 120) else "🔴 Inactive"
+                    lambda t: "🟢 Active" if (pd.notnull(t) and (now - t).total_seconds() < active_window) else "🔴 Inactive"
                 )
 
                 if "username" not in summary.columns:
                     summary["username"] = summary["user_id"].apply(lambda x: f"User {x}")
 
                 st.subheader("📌 Users at a Glance")
-                display_table = summary[["username", "role", "avg_productivity", "timestamp", status_col, "active_status"]]
-                display_table = display_table.rename(columns={status_col: "status"})
-                display_table = display_table.sort_values("avg_productivity", ascending=False).reset_index(drop=True)
-                st.dataframe(display_table, use_container_width=True)
+                st.dataframe(summary[["username", "role", "avg_productivity", "timestamp", status_col, "active_status"]]
+                             .rename(columns={status_col: "status"})
+                             .sort_values("avg_productivity", ascending=False)
+                             .reset_index(drop=True),
+                             use_container_width=True)
 
                 st.subheader("📊 Leaderboard — Average Productivity")
                 fig_lb = px.bar(
@@ -332,9 +344,9 @@ elif user["role"] == "admin":
                 st.subheader("🔍 Inspect a User (drilldown)")
                 usernames = sorted(summary["username"].unique().tolist())
                 if usernames:
-                    selected_user = st.selectbox("Select user to inspect", usernames, index=0)
+                    selected_user = st.selectbox("Select user", usernames, index=0)
                     df_log = get_logs()
-                    df_log = ensure_df_timestamps(df_log)
+                    df_log = unify_timestamps(df_log)
                     prod_col = get_prod_col(df_log)
                     user_data = df_log[df_log["username"] == selected_user].sort_values("timestamp")
 
@@ -346,8 +358,8 @@ elif user["role"] == "admin":
                     if user_data.empty:
                         st.info("No logs for selected user.")
                     else:
-                        st.write(f"### Latest logs for {selected_user}")
-                        st.dataframe(user_data.tail(20).reset_index(drop=True), use_container_width=True)
+                        rows_drill = st.selectbox("Rows to show", [20, 50, 100, 200, 500], index=0)
+                        st.dataframe(user_data.tail(rows_drill).reset_index(drop=True), use_container_width=True)
                         if prod_col in user_data.columns:
                             st.subheader("📈 Productivity Trend")
                             st.line_chart(user_data.set_index("timestamp")[prod_col].astype(float))
@@ -383,36 +395,40 @@ elif user["role"] == "admin":
     elif admin_option == "Self Productivity Testing":
         st.header("🧪 Admin Self Productivity Test")
         try:
-            reg_model, cluster_model, scaler, train_feature_list, cluster_role_map = load_models_safe()
-            latest_row = get_realtime_data()
-            if isinstance(latest_row, pd.DataFrame):
-                latest_row = latest_row.iloc[0]
-            for col in train_feature_list:
-                if col not in latest_row.index:
-                    latest_row[col] = 0
-            X = pd.DataFrame([latest_row.loc[train_feature_list].astype(float).to_list()],
-                             columns=train_feature_list)
-            X_scaled = scaler.transform(X)
-            predicted_productivity = round(float(reg_model.predict(X_scaled)[0]), 2)
-            predicted_cluster = int(cluster_model.predict(X_scaled)[0])
-            predicted_role = cluster_role_map.get(predicted_cluster, f"Cluster {predicted_cluster}")
+            with st.spinner("Running realtime capture and prediction..."):
+                reg_model, cluster_model, scaler, train_feature_list, cluster_role_map = load_models_safe()
+                latest_row = get_realtime_data()
+                if isinstance(latest_row, pd.DataFrame):
+                    latest_row = latest_row.iloc[0]
+                for col in train_feature_list:
+                    if col not in latest_row.index:
+                        latest_row[col] = 0
+                X = pd.DataFrame([latest_row.loc[train_feature_list].astype(float).to_list()],
+                                 columns=train_feature_list)
+                X_scaled = scaler.transform(X)
+                predicted_productivity = round(float(reg_model.predict(X_scaled)[0]), 2)
+                predicted_cluster = int(cluster_model.predict(X_scaled)[0])
+                predicted_role = cluster_role_map.get(predicted_cluster, f"Cluster {predicted_cluster}")
 
-            # Idle override
-            coding_time = float(safe_get(latest_row, "time_coding", 0))
-            browsing_time = float(safe_get(latest_row, "time_browsing", 0))
-            other_time = float(safe_get(latest_row, "time_other", 0))
-            if (coding_time + browsing_time + other_time) == 0:
-                predicted_productivity = 0.0
-                predicted_role = "Idle"
-            status = "✅ Productive" if predicted_productivity >= PRODUCTIVITY_THRESHOLD else "❌ Not Productive"
+                # Idle override
+                coding_time = float(safe_get(latest_row, "time_coding", 0))
+                browsing_time = float(safe_get(latest_row, "time_browsing", 0))
+                other_time = float(safe_get(latest_row, "time_other", 0))
+                if (coding_time + browsing_time + other_time) == 0:
+                    predicted_productivity = 0.0
+                    predicted_role = "Idle"
+                status = "✅ Productive" if predicted_productivity >= PRODUCTIVITY_THRESHOLD else "❌ Not Productive"
 
             c1, c2, c3 = st.columns(3)
             c1.metric("Predicted Productivity", f"{predicted_productivity:.2f}")
             c2.metric("Predicted Role", predicted_role)
             c3.metric("Status", status)
 
-            st.subheader("Raw Capture (not saved)")
-            st.write(latest_row.to_dict())
+            st.subheader("Latest Capture (key fields)")
+            show_keys = ["typing_intensity", "mouse_intensity", "idle_duration", "task_switch_total",
+                         "time_coding", "time_browsing", "time_other"]
+            latest_display = {k: safe_get(latest_row, k, None) for k in show_keys}
+            st.write(latest_display)
         except Exception as e:
             st.error(f"❌ Error in self test: {e}")
 
@@ -432,7 +448,7 @@ elif user["role"] == "admin":
                     created = add_user(new_username, new_password, role=new_role)
                     if created:
                         st.success(f"✅ User '{new_username}' created with role '{new_role}'.")
-                        st.experimental_rerun()
+                        st.rerun()
                     else:
                         st.error("⚠️ Username already exists.")
 
@@ -458,6 +474,6 @@ elif user["role"] == "admin":
                             )
                             conn.commit()
                         st.success(f"✅ Password for '{selected_user}' has been reset.")
-                        st.experimental_rerun()
+                        st.rerun()
             else:
                 st.warning("⚠️ No users found in database.")
