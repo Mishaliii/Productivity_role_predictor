@@ -1,13 +1,22 @@
 # script/collect_realtime_data.py
 import pandas as pd
 import time
-from pynput import keyboard, mouse
-import pygetwindow as gw
+from datetime import datetime
 import math
 import socket
 import uuid
 import os
-from datetime import datetime
+
+# --- Optional imports (safe fallback if unavailable) ---
+try:
+    from pynput import keyboard, mouse
+except Exception:
+    keyboard = None
+    mouse = None
+try:
+    import pygetwindow as gw
+except Exception:
+    gw = None
 
 # ================== GLOBAL STATE ==================
 keypress_count = 0
@@ -31,6 +40,7 @@ time_counters = {
 # ================== DEVICE ID ==================
 DEVICE_ID_FILE = os.path.join(os.path.dirname(__file__), "..", ".device_id")
 
+
 def get_device_id() -> str:
     """Return a persistent unique ID for this device."""
     try:
@@ -42,29 +52,36 @@ def get_device_id() -> str:
             f.write(new_id)
         return new_id
     except Exception:
-        # fallback if file write fails
         return f"{socket.gethostname()}-{uuid.uuid4().hex[:8]}"
+
 
 DEVICE_ID = get_device_id()
 
 # ================== SESSION ID ==================
+
+
 def get_session_id() -> int:
     """Return a session ID that persists for the day."""
     return int(datetime.now().strftime("%Y%m%d"))
 
+
 SESSION_ID = get_session_id()
 
 # ================== EVENT HANDLERS ==================
+
+
 def on_keypress(key):
     global keypress_count, last_activity_time
     keypress_count += 1
     last_activity_time = time.time()
+
 
 def on_click(x, y, button, pressed):
     global mouse_clicks, last_activity_time
     if pressed:
         mouse_clicks += 1
         last_activity_time = time.time()
+
 
 def on_move(x, y):
     global mouse_distance, last_mouse_position, last_activity_time
@@ -75,21 +92,32 @@ def on_move(x, y):
     last_mouse_position = (x, y)
     last_activity_time = time.time()
 
-# Start listeners once (daemon so app doesn't block)
-keyboard.Listener(on_press=on_keypress, daemon=True).start()
-mouse.Listener(on_click=on_click, on_move=on_move, daemon=True).start()
+
+# Start listeners once (if library available)
+if keyboard and mouse:
+    try:
+        keyboard.Listener(on_press=on_keypress, daemon=True).start()
+        mouse.Listener(on_click=on_click, on_move=on_move, daemon=True).start()
+    except Exception:
+        # Don't crash if listeners fail (e.g., headless env)
+        pass
 
 # ================== ACTIVE WINDOW ==================
+
+
 def get_active_window_title() -> str:
     try:
-        window = gw.getActiveWindow()
-        if window:
-            return (window.title or "").strip().lower()
+        if gw:
+            window = gw.getActiveWindow()
+            if window:
+                return (window.title or "").strip().lower()
     except Exception:
-        return ""
+        pass
     return ""
 
 # ================== UTIL ==================
+
+
 def format_time(seconds: float) -> str:
     if seconds < 60:
         return f"{int(seconds)}s"
@@ -102,17 +130,19 @@ def format_time(seconds: float) -> str:
         return f"{hrs}h {mins}m"
 
 # ================== MAIN ==================
+
+
 def get_realtime_data() -> pd.DataFrame:
     """
     Capture current activity metrics since last call.
-    Returns a one-row DataFrame with consistent columns.
+    Returns a one-row DataFrame with consistent numeric columns.
     """
     global keypress_count, mouse_clicks, mouse_distance
     global last_activity_time, last_fetch_time
     global last_active_title, switch_count_total, time_counters
 
     now = time.time()
-    interval = max(now - last_fetch_time, 1.0)
+    interval = max(now - last_fetch_time, 1.0)  # at least 1 sec
     last_fetch_time = now
 
     # Idle time
@@ -161,14 +191,14 @@ def get_realtime_data() -> pd.DataFrame:
     row = {
         "session_id": SESSION_ID,
         "device_id": DEVICE_ID,
-        "typing_intensity": round(typing_intensity, 2),
-        "mouse_intensity": round(mouse_intensity, 2),
-        "idle_duration": round(idle_time, 2),
-        "task_switch_delta": task_switch_delta,
-        "task_switch_total": switch_count_total,
-        "time_coding": round(time_counters["time_coding"], 2),
-        "time_browsing": round(time_counters["time_browsing"], 2),
-        "time_other": round(time_counters["time_other"], 2),
+        "typing_intensity": float(round(typing_intensity, 2)),
+        "mouse_intensity": float(round(mouse_intensity, 2)),
+        "idle_duration": float(round(idle_time, 2)),
+        "task_switch_delta": int(task_switch_delta),
+        "task_switch_total": int(switch_count_total),
+        "time_coding": float(round(time_counters["time_coding"], 2)),
+        "time_browsing": float(round(time_counters["time_browsing"], 2)),
+        "time_other": float(round(time_counters["time_other"], 2)),
         "time_coding_str": format_time(time_counters["time_coding"]),
         "time_browsing_str": format_time(time_counters["time_browsing"]),
         "time_other_str": format_time(time_counters["time_other"]),
@@ -181,4 +211,13 @@ def get_realtime_data() -> pd.DataFrame:
     mouse_clicks = 0
     mouse_distance = 0.0
 
-    return pd.DataFrame([row])
+    # Ensure DataFrame with clean dtypes
+    df = pd.DataFrame([row])
+    numeric_cols = [
+        "typing_intensity", "mouse_intensity", "idle_duration",
+        "task_switch_delta", "task_switch_total",
+        "time_coding", "time_browsing", "time_other"
+    ]
+    for c in numeric_cols:
+        df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0)
+    return df
